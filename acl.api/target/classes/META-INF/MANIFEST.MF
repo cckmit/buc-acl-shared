@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: dongyu.ydy
+Build-Jdk: 1.6.0_45
+Created-By: Maven Integration for Eclipse
+artifactId: acl.api
+groupId: com.alibaba.platform.shared
+timestamp: 
+version: 1.2.31-SNAPSHOT
+
