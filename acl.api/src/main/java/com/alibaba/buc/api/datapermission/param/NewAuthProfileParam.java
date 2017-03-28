@@ -9,7 +9,7 @@ import com.alibaba.buc.acl.api.common.NormalAclParam;
 
 /**
  * 封装描述数据权限的操作＋资源信息
- * 类AuthProfile.java的实现描述：TODO 类实现描述 
+ *
  * @author tongxu 2015年9月15日 下午1:34:06
  */
 public class NewAuthProfileParam extends NormalAclParam{

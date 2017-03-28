@@ -2,17 +2,8 @@ package com.alibaba.buc.acl.api.input.datapermission;
 
 import com.alibaba.buc.acl.api.common.NormalAclParam;
 
-//@AppKeyPrivilegeAnnotation(
-//        appKeyField = "accessKey",
-//        keyCenterAccessKeyField = "keyCenterAccessKey",
-//        interfaceNameField = "PropertyService.isPropertyEnumValueExist",
-//        groups = {Sa1.class}
-//)
-
 /**
- * 封装属性查询参数 
- * 
- * 类GetPropertyParam.java的实现描述：TODO 类实现描述
+ * 封装属性查询参数
  * 
  * @author tongxu 2016年11月4日 下午1:47:23
  */

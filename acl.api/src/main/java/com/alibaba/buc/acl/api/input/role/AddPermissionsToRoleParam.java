@@ -2,93 +2,14 @@ package com.alibaba.buc.acl.api.input.role;
 
 import java.util.List;
 
-import javax.validation.GroupSequence;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotEmpty;
-
-import com.alibaba.buc.acl.api.annotation.AppKeyPrivilegeAnnotation;
-import com.alibaba.buc.acl.api.annotation.ArraySizeAnnotation;
-import com.alibaba.buc.acl.api.annotation.role.BothNeedAnnotation;
-import com.alibaba.buc.acl.api.annotation.role.RoleAddPermissionsIsInApplyingAnnotation;
-import com.alibaba.buc.acl.api.annotation.role.SameDomainOrSharedAnnotation;
-import com.alibaba.buc.acl.api.annotation.role.UnderThisDomainAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.Oper;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.S3;
-import com.alibaba.buc.acl.api.annotation.sequence.S4;
-import com.alibaba.buc.acl.api.annotation.sequence.S5;
-import com.alibaba.buc.acl.api.annotation.sequence.S6;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa4;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb3;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb4;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb6;
 import com.alibaba.buc.acl.api.common.AclParam;
-
-@GroupSequence(
-        value = {
-                Sb1.class,
-                S1.class,
-                Sa1.class,
-                S2.class,
-                Oper.class,
-                Sb3.class,
-                S3.class,
-                Sb4.class,
-                S4.class,
-                Sa4.class,
-                S5.class,
-                Sb6.class,
-                S6.class,
-                AddPermissionsToRoleParam.class
-        }
-)
-@AppKeyPrivilegeAnnotation(
-        appKeyField = "accessKey",
-        keyCenterAccessKeyField = "keyCenterAccessKey",
-        interfaceNameField = "RoleService.addPermissionsToRole",
-        groups = {Sa1.class}
-)
-
-@UnderThisDomainAnnotation(
-        appKeyField = "accessKey",
-        targetNameField = "roleName",
-        type = "role",
-        groups = {S3.class}
-)
-
-@SameDomainOrSharedAnnotation(
-        appKeyField = "accessKey",
-        namesField = "permissionNames",
-        type = "permission",
-        groups = {Sa4.class}
-)
-
-@RoleAddPermissionsIsInApplyingAnnotation(
-        roleNameField = "roleName",
-        permissionNamesField = "permissionNames",
-        groups = {S5.class}
-)
-
-
-@BothNeedAnnotation(
-        firstField = "isFlow",
-        secondField = "applyUserId",
-        groups = {S6.class}
-)
 
 public class AddPermissionsToRoleParam extends AclParam {
 
     private static final long serialVersionUID = 9081234491980006957L;
 
-    @NotEmpty(groups = {Sb3.class})
     private String roleName; // 角色名
 
-    @NotNull(groups = {Sb4.class})
-    @ArraySizeAnnotation(size = 100, groups = {S4.class})
     private List<String> permissionNames; // 权限名列表
 
     private Boolean isFlow = false;//是否走流程，默认不走，如果为true，则会走角色流程：角色归属人--应用/部门权限管理员--角色归属人主管--权限归属人--安全部终审

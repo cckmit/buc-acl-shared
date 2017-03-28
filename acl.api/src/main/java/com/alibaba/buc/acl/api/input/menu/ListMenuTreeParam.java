@@ -1,37 +1,16 @@
 package com.alibaba.buc.acl.api.input.menu;
 
-import javax.validation.GroupSequence;
-import javax.validation.constraints.NotNull;
-
-import com.alibaba.buc.acl.api.annotation.BucUserAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.Oper;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.S3;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb3;
 import com.alibaba.buc.acl.api.common.AclParam;
 
 /**
  * List菜单的入参
  *
- * @author taigao.wjj update 2015/12/03
+ * @author taigao.wjj 2015/12/03
  */
-@GroupSequence(value = {
-        Sb1.class,
-        S1.class,
-        S2.class,
-        Oper.class,
-        Sb3.class,
-        S3.class,
-        ListMenuTreeParam.class
-})
 public class ListMenuTreeParam extends AclParam {
 
     private static final long serialVersionUID = 4097985443864348510L;
 
-    @NotNull(groups = {Sb3.class})
-    @BucUserAnnotation(groups = {S3.class})
     private Integer userId;
 
     private String startMenuId;
@@ -74,6 +53,4 @@ public class ListMenuTreeParam extends AclParam {
     public void setRecursive(Boolean recursive) {
         this.recursive = recursive;
     }
-
-
 }
