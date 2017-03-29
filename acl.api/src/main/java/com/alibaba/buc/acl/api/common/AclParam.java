@@ -46,4 +46,7 @@ public class AclParam implements Serializable {
         this.operatorUserId = operatorUserId;
     }
 
+	public Integer getReallyOperatorUserId() {
+		return operatorUserId;
+	}
 }
