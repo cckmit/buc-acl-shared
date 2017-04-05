@@ -11,19 +11,40 @@ public class CreateMenuParam extends AclParam {
 
     private static final long serialVersionUID = -4273288861491676786L;
 
-    private String parentName;    //父菜单名称, 选填
+    /**
+     * 父菜单名称, 选填
+     */
+    private String parentName;
 
-    private String name;    //菜单唯一标示, 必填
+    /**
+     * 菜单唯一标示, 必填
+     */
+    private String name;
 
-    private String title;  //菜单的title, 必填
+    /**
+     * 菜单的title, 必填
+     */
+    private String title;
 
-    private String permissionName;  //关联权限名称, 选填
+    /**
+     * 关联权限名称, 选填
+     */
+    private String permissionName;
 
-    private Integer sort;   //排序序号, 选填
+    /**
+     * 排序序号, 选填
+     */
+    private Integer sort;
 
-    private String url;     //url, 选填
+    /**
+     * url, 选填
+     */
+    private String url;
 
-    private String description; //描述, 必填
+    /**
+     * 描述, 必填
+     */
+    private String description;
 
     public String getParentName() {
         return parentName;

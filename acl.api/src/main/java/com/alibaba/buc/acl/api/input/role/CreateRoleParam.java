@@ -6,6 +6,11 @@ import java.util.Map;
 
 import com.alibaba.buc.acl.api.common.AclParam;
 
+/**
+ * 创建角色的入参
+ *
+ * @author taigao
+ */
 public class CreateRoleParam extends AclParam {
 
     private static final long serialVersionUID = 7115082483567508273L;

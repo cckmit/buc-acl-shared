@@ -11,8 +11,15 @@ public class GetMenuParam extends AclParam {
 
     private static final long serialVersionUID = 1069746530784792021L;
 
-    private String name;    //菜单唯一标示
+    /**
+     * 菜单名，英文，唯一标识
+     */
+    private String name;
 
+    /**
+     * 菜单模式
+     * 例如：/apply/permission.htm
+     */
     private String pattern;
 
     public String getName() {

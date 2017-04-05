@@ -4,13 +4,24 @@ import java.util.List;
 
 import com.alibaba.buc.acl.api.common.AclParam;
 
+/**
+ * 验权的入参
+ *
+ * @author taigao
+ */
 public class CheckPermissionsParam extends AclParam {
 
     private static final long serialVersionUID = -2148468421035987610L;
 
-    private Integer userId; // UC中的userId
+    /**
+     * UC 中的 userId
+     */
+    private Integer userId;
 
-    private List<String> permissionNames; // 权限名列表
+    /**
+     * 权限名列表
+     */
+    private List<String> permissionNames;
 
     public Integer getUserId() {
         return userId;

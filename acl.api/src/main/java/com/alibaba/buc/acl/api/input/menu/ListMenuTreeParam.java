@@ -3,7 +3,7 @@ package com.alibaba.buc.acl.api.input.menu;
 import com.alibaba.buc.acl.api.common.AclParam;
 
 /**
- * List菜单的入参
+ * 获取菜单树的入参
  *
  * @author taigao.wjj 2015/12/03
  */
@@ -11,14 +11,23 @@ public class ListMenuTreeParam extends AclParam {
 
     private static final long serialVersionUID = 4097985443864348510L;
 
+    /**
+     * UC 中的 userId，必填
+     */
     private Integer userId;
 
+    /**
+     * 要获取的开始菜单ID，非必填
+     */
     private String startMenuId;
 
+    /**
+     * 要获取的开始菜单名，非必填
+     */
     private String startMenuName;
 
     /**
-     * is开头，用eclipse生成getter, setter, 容易出错。
+     * 是否递归，非必填
      */
     private Boolean recursive;
 

@@ -5,24 +5,46 @@ import com.alibaba.buc.acl.api.common.AclParam;
 /**
  * 创建 url 的入参
  *
- * Created by baidian on 12/14/15.
+ * @author baidian
  */
 public class CreateActionParam extends AclParam {
 
     private static final long serialVersionUID = 4303167904212188154L;
 
+    /**
+     * url 名称
+     */
     private String name;
 
+    /**
+     * url 标题
+     */
     private String title;
 
+    /**
+     * url 模式
+     * 例如：/apply/permission.htm
+     */
     private String pattern;
 
+    /**
+     * url 描述
+     */
     private String description;
 
+    /**
+     * 父 url 名称
+     */
     private String parentActionName;
 
+    /**
+     * 关联权限名
+     */
     private String permissionName;
 
+    /**
+     * 排序
+     */
     private Integer sort;
 
     public String getParentActionName() {

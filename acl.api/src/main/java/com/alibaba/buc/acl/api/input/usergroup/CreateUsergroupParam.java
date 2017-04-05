@@ -5,28 +5,57 @@ import com.alibaba.buc.api.param.RevokeRuleConstant;
 
 import java.util.List;
 
+/**
+ * 创建用户组的入参
+ *
+ * @author taigao
+ */
 public class CreateUsergroupParam extends AclParam {
 
     private static final long serialVersionUID = -2476002815205391300L;
 
-    private String name;    // 用户组英文名
-
-    private String title;   // 用户组中文名
-
-    private String description; // 用户组描述
-
-    private List<Integer> adminUserIds;  // 用户组管理员的 userId
-
-    private boolean isNotify = true;    // 是否通知管理员
-
-    private List<String> orgIds;    // 适用范围
-
-    private Integer type = 1;  // 1:用户组, 0:岗位
-
-    private String publicAttri = "1";   // 1:公开可申请 2 公开不可申请 3 不公开 4.使用范围内看见可申请
+    /**
+     * 用户组英文名
+     */
+    private String name;
 
     /**
-     * 权限回收策略（设置值请使用{@link RevokeRuleConstant}
+     * 用户组中文名
+     */
+    private String title;
+
+    /**
+     * 用户组描述
+     */
+    private String description;
+
+    /**
+     * 用户组管理员的 userId
+     */
+    private List<Integer> adminUserIds;
+
+    /**
+     * 是否通知管理员
+     */
+    private boolean isNotify = true;
+
+    /**
+     * 适用范围
+     */
+    private List<String> orgIds;
+
+    /**
+     * 1:用户组 （默认是1，目前没有其他选项）
+     */
+    private Integer type = 1;
+
+    /**
+     * 1:公开可申请 2 公开不可申请 3 不公开 4.使用范围内看见可申请
+     */
+    private String publicAttri = "1";
+
+    /**
+     * 权限回收策略（设置值请使用{@link RevokeRuleConstant}）
      */
     private String revokeRule = "TRANSFER_REVOKE";
 

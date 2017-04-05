@@ -4,13 +4,24 @@ import java.util.List;
 
 import com.alibaba.buc.acl.api.common.AclParam;
 
+/**
+ * 验 url 的入参
+ *
+ * @author taigao
+ */
 public class CheckActionsParam extends AclParam {
 
     private static final long serialVersionUID = 6258761572451320217L;
 
-    private Integer userId; // UC中的userId
+    /**
+     * UC 中的 userId
+     */
+    private Integer userId;
 
-    private List<String> patterns; // URL列表
+    /**
+     * url 列表
+     */
+    private List<String> patterns;
 
     public Integer getUserId() {
         return userId;

@@ -9,14 +9,19 @@ import com.alibaba.buc.acl.api.common.AclParam;
  *
  * @author yicheng.wp
  */
-
 public class RemovePermissionsFromRoleParam extends AclParam {
 
     private static final long serialVersionUID = -4670211202150323840L;
 
-    private String roleName; // 角色名
+    /**
+     * 角色名
+     */
+    private String roleName;
 
-    private List<String> permissionNames; // 权限名列表
+    /**
+     * 权限名列表
+     */
+    private List<String> permissionNames;
 
     public String getRoleName() {
         return roleName;

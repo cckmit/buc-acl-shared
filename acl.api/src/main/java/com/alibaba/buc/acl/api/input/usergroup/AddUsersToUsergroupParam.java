@@ -5,17 +5,34 @@ import java.util.List;
 
 import com.alibaba.buc.acl.api.common.AclParam;
 
+/**
+ * 添加用户到用户组的入参
+ *
+ * @author taigao
+ */
 public class AddUsersToUsergroupParam extends AclParam {
 
     private static final long serialVersionUID = 1508135524033294029L;
 
-    private String usergroupName; // 用户组名
+    /**
+     * 用户组名
+     */
+    private String usergroupName;
 
-    private List<Integer> userIds; // 用户userId列表
+    /**
+     * 用户 userId 列表
+     */
+    private List<Integer> userIds;
 
+    /**
+     * 过期时间
+     */
     private Date expiredDate;
 
-    private String reason; // 理由
+    /**
+     * 理由
+     */
+    private String reason;
 
     public String getUsergroupName() {
         return usergroupName;

@@ -14,15 +14,31 @@ public class GrantPermissionsToUsergroupParam extends AclParam {
 
     private static final long serialVersionUID = 7663211741564543912L;
 
-    private String usergroupName; // 用户组名
+    /**
+     * 用户组名
+     */
+    private String usergroupName;
 
-    private List<String> permissionNames; // 权限名列表
+    /**
+     * 权限名列表
+     */
+    private List<String> permissionNames;
 
-    private Date expireDate; // 过期时间
+    /**
+     * 过期时间
+     */
+    private Date expireDate;
 
-    private String action; // 授予动作
+    /**
+     * 授予动作
+     * 值为：Grant 或 Freeze 或 Revoke
+     */
+    private String action;
 
-    private String reason; // 理由
+    /**
+     * 理由
+     */
+    private String reason;
 
     public String getUsergroupName() {
         return usergroupName;

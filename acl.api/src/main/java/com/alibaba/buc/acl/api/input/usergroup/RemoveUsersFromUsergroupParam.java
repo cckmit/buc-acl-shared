@@ -4,15 +4,29 @@ import java.util.List;
 
 import com.alibaba.buc.acl.api.common.AclParam;
 
+/**
+ * 从用户组删除用户的入参
+ *
+ * @author taigao
+ */
 public class RemoveUsersFromUsergroupParam extends AclParam {
 
     private static final long serialVersionUID = -7068230715576112639L;
 
-    private String usergroupName;   // 用户组名
+    /**
+     * 用户组名
+     */
+    private String usergroupName;
 
-    private List<Integer> userIds;  // 用户userId列表
+    /**
+     * 用户 userId 列表
+     */
+    private List<Integer> userIds;
 
-    private String reason; // 理由
+    /**
+     * 理由
+     */
+    private String reason;
 
     public String getUsergroupName() {
         return usergroupName;

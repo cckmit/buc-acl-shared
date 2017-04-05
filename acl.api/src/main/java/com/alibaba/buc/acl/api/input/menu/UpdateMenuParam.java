@@ -11,19 +11,44 @@ public class UpdateMenuParam extends AclParam {
 
     private static final long serialVersionUID = 6848568153409681830L;
 
-    private String parentName;  //父菜单名称, 选填  填写不存在的menu name 是表示去掉父菜单, null不修改
+    /**
+     * 父菜单名称, 选填
+     * 填写不存在的 menu name 是表示去掉父菜单
+     * 填 null 不修改
+     */
+    private String parentName;
 
-    private String name;    //菜单唯一标示, 必填
+    /**
+     * 菜单唯一标示, 必填
+     */
+    private String name;
 
-    private String title; //菜单的title, 选填
+    /**
+     * 菜单的title, 选填
+     */
+    private String title;
 
-    private String permissionName;//关联权限名称,选填  填写不存在的权限名, 表示去掉, null不修改
+    /**
+     * 关联权限名称,选填
+     * 填写不存在的权限名, 表示去掉
+     * 填 null 不修改
+     */
+    private String permissionName;
 
-    private Integer sort;   //排序序号, 选填
+    /**
+     * 排序序号, 选填
+     */
+    private Integer sort;
 
-    private String url; //url, 选填
+    /**
+     * url, 选填
+     */
+    private String url;
 
-    private String description; //描述, 选填
+    /**
+     * 描述, 选填
+     */
+    private String description;
 
     public String getParentName() {
         return parentName;

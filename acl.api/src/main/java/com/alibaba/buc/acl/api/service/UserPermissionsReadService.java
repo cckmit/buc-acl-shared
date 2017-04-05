@@ -6,19 +6,17 @@ import com.alibaba.buc.acl.api.output.userpermission.FindUserPermissionsResult;
 import com.alibaba.buc.acl.api.output.userpermission.FindUserRolesResult;
 
 public interface UserPermissionsReadService {
-	
+
 	/**
-	 * 获得某个用户在某个应用下面的直接的权限s.
-	 * @param param
-	 * @return
+	 * 已废弃，请勿调用
 	 */
+	@Deprecated
 	FindUserPermissionsResult findUserPermissions(FindUserPermissionsParam param);
-	
+
 	/**
-	 * 获得某个用户在某个应用下面的直接的角色s.
-	 * @param param
-	 * @return
+	 * 已废弃，请勿调用
 	 */
+	@Deprecated
 	FindUserRolesResult findUserRoles(FindUserRolesParam param);
 
 }

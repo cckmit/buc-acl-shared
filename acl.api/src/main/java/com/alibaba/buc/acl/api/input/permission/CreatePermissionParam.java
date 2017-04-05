@@ -5,6 +5,11 @@ import java.util.Map;
 
 import com.alibaba.buc.acl.api.common.AclParam;
 
+/**
+ * 创建权限的入参
+ *
+ * @author taigao
+ */
 public class CreatePermissionParam extends AclParam {
 
     private static final long serialVersionUID = -3114177970774303580L;

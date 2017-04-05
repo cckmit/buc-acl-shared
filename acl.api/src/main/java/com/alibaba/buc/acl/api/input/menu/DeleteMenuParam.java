@@ -11,7 +11,10 @@ public class DeleteMenuParam extends AclParam {
 
     private static final long serialVersionUID = -8344602082953638351L;
 
-    private String name;    //菜单唯一标示, 必填
+    /**
+     * 菜单唯一标示, 必填
+     */
+    private String name;
 
     public String getName() {
         return name;

@@ -15,15 +15,31 @@ public class GrantPermissionsToUserParam extends AclParam {
 
     private static final long serialVersionUID = 7203776587877535392L;
 
-    private Integer userId; // UC中的userId
+    /**
+     * UC 中的 userId
+     */
+    private Integer userId;
 
-    private List<String> permissionNames; // 权限名列表
+    /**
+     * 权限名列表
+     */
+    private List<String> permissionNames;
 
-    private Date expireDate; // 过期时间
+    /**
+     * 过期时间
+     */
+    private Date expireDate;
 
-    private String action; // 授予动作
+    /**
+     * 授予动作
+     * 值为：Grant 或 Freeze 或 Revoke
+     */
+    private String action;
 
-    private String reason; // 理由
+    /**
+     * 理由
+     */
+    private String reason;
 
     public Integer getUserId() {
         return userId;

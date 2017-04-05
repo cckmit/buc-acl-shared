@@ -3,9 +3,7 @@ package com.alibaba.buc.acl.api.common;
 import java.io.Serializable;
 
 /**
- * 接口入参需要实现的接口
- * <p/>
- * 之后新增的接口入参都要实现本接口
+ * 接口入参基类
  *
  * @author yicheng.wp
  */
@@ -13,11 +11,22 @@ public class AclParam implements Serializable {
 
     private static final long serialVersionUID = 152341552939252108L;
 
-    private String accessKey;  // appKey 必填
+	/**
+	 * 必填，注册ACL的应用都会有一个accessKey，可在应用管理中查看
+	 */
+    private String accessKey;
 
-    private String keyCenterAccessKey; // 如果你是keyCenter,这个值不能为null,且必须正确。
+	/**
+	 * 非必填，BUC-KeyCenter accessKey，普通用户无需关注
+	 */
+	private String keyCenterAccessKey;
 
-    private Integer operatorUserId = -1000;   // 默认为-1000;操作人,最好要填,来源从SSO的client里面获取
+	/**
+	 * 非必填，接口操作人，建议填写以追溯操作此动作的员工是谁
+	 * 操作人userId可从SSO的client里面获取
+	 * 如果是系统操作，也可填写部门公共账号（即工作帐号）
+	 */
+    private Integer operatorUserId = -1000;
 
     public String getAccessKey() {
 		return accessKey;
