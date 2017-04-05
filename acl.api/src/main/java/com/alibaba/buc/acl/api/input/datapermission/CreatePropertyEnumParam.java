@@ -2,17 +2,9 @@ package com.alibaba.buc.acl.api.input.datapermission;
 
 import com.alibaba.buc.acl.api.common.NormalAclParam;
 
-
-//@AppKeyPrivilegeAnnotation(
-//        appKeyField = "accessKey",
-//        keyCenterAccessKeyField = "keyCenterAccessKey",
-//        interfaceNameField = "PropertyService.createPropertyEnum",
-//        groups = {Sa1.class}
-//)
-
 /**
  * 封装属性枚举创建参数
- * 类CreatePropertyEnumValueParam.java的实现描述：TODO 类实现描述 
+ *
  * @author tongxu 2016年11月4日 下午2:31:50
  */
 public class CreatePropertyEnumParam extends NormalAclParam {

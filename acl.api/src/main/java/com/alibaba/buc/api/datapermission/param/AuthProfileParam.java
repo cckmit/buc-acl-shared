@@ -2,35 +2,11 @@ package com.alibaba.buc.api.datapermission.param;
 
 import java.util.List;
 
-import javax.validation.GroupSequence;
-
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import com.alibaba.buc.acl.api.annotation.AppKeyPrivilegeAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
 import com.alibaba.buc.acl.api.common.AclParam;
 
-@GroupSequence(
-               value = {
-                       Sb1.class,
-                       S1.class,
-                       Sa1.class,
-                       S2.class,
-//                       Oper.class,
-                       AuthProfileParam.class
-               }
-       )
-
-    @AppKeyPrivilegeAnnotation(
-           appKeyField = "accessKey",
-           keyCenterAccessKeyField="keyCenterAccessKey",
-           interfaceNameField = "DataAccessControlService.checkDataPermission",
-           groups = {Sa1.class}
-       )
 /**
  * 封装描述数据权限的操作＋资源信息
  * 类AuthProfile.java的实现描述：TODO 类实现描述 

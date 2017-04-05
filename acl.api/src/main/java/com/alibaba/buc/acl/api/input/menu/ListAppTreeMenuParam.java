@@ -1,34 +1,13 @@
 package com.alibaba.buc.acl.api.input.menu;
 
-import javax.validation.GroupSequence;
-import com.alibaba.buc.acl.api.annotation.AppKeyPrivilegeAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.Oper;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
 import com.alibaba.buc.acl.api.common.AclParam;
 
-@GroupSequence(
-        value = {
-        		  Sb1.class,
-                  S1.class,
-                  Sa1.class,
-                  S2.class,
-                  Oper.class,
-                  ListAppTreeMenuParam.class
-        }
-)
-
-@AppKeyPrivilegeAnnotation(
-        appKeyField = "accessKey",
-        keyCenterAccessKeyField = "keyCenterAccessKey",
-        interfaceNameField = "MenuService.listAppTreeMenu",
-        groups = {Sa1.class}
-)
-
-
+/**
+ * 获取某个应用下菜单树的入参
+ *
+ * @author taigao.wjj
+ */
 public class ListAppTreeMenuParam extends AclParam{
-	
 
+    private static final long serialVersionUID = 6698536756390631978L;
 }

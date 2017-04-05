@@ -1,36 +1,10 @@
 package com.alibaba.buc.api.grant;
 
-import javax.validation.GroupSequence;
-
-import com.alibaba.buc.acl.api.annotation.AppKeyPrivilegeAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.Oper;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
 import com.alibaba.buc.acl.api.common.AclParam;
-
-@GroupSequence(
-           value = {
-                   Sb1.class,
-                   S1.class,
-                   Sa1.class,
-                   S2.class,
-                   Oper.class,
-                   CleanDataPermissionParam.class
-           }
-   )
-
-@AppKeyPrivilegeAnnotation(
-       appKeyField = "accessKey",
-       keyCenterAccessKeyField="keyCenterAccessKey",
-       interfaceNameField = "GrantService.cleanDataPermission",
-       groups = {Sa1.class}
-   )
 
 /**
  * 清除授权对象指定数据权限参数
- * 类CleanUserDataPermissionParam.java的实现描述：TODO 类实现描述 
+ *
  * @author tongxu 2016年9月5日 下午5:17:21
  */
 public class CleanDataPermissionParam extends AclParam {

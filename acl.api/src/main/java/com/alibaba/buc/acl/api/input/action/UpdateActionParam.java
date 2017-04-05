@@ -1,112 +1,50 @@
 package com.alibaba.buc.acl.api.input.action;
 
-import com.alibaba.buc.acl.api.annotation.AppKeyPrivilegeAnnotation;
-import com.alibaba.buc.acl.api.annotation.ExistSize;
-import com.alibaba.buc.acl.api.annotation.action.ActionMustExistAnnotation;
-import com.alibaba.buc.acl.api.annotation.action.ActionParentNameAnnotation;
-import com.alibaba.buc.acl.api.annotation.menu.MenuPermissionAnnotation;
-import com.alibaba.buc.acl.api.annotation.menu.UrlCanUpdateAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.Oper;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.S3;
-import com.alibaba.buc.acl.api.annotation.sequence.S4;
-import com.alibaba.buc.acl.api.annotation.sequence.S5;
-import com.alibaba.buc.acl.api.annotation.sequence.S6;
-import com.alibaba.buc.acl.api.annotation.sequence.S7;
-import com.alibaba.buc.acl.api.annotation.sequence.S8;
-import com.alibaba.buc.acl.api.annotation.sequence.S9;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb3;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb5;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb6;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb8;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb9;
 import com.alibaba.buc.acl.api.common.AclParam;
 
-import javax.validation.GroupSequence;
-
-import org.hibernate.validator.constraints.NotEmpty;
-
-@GroupSequence(
-        value = {
-                Sb1.class,
-                S1.class,
-                Sa1.class,
-                S2.class,
-                Oper.class,
-                Sb3.class,
-                S3.class,
-                S4.class,
-                Sb5.class,
-                S5.class,
-                Sb6.class,
-                S6.class,
-                S7.class,
-                Sb8.class,
-                S8.class,
-                Sb9.class,
-                S9.class,
-                UpdateActionParam.class
-        }
-)
-
-@AppKeyPrivilegeAnnotation(
-        appKeyField = "accessKey",
-        keyCenterAccessKeyField = "keyCenterAccessKey",
-        interfaceNameField = "ActionService.updateAction",
-        groups = {Sa1.class}
-)
-
-@ActionMustExistAnnotation(
-        appKeyField = "accessKey",
-        nameField = "name",
-        groups = {S3.class}
-)
-
-@UrlCanUpdateAnnotation(
-        appKeyField = "accessKey",
-        urlField = "pattern",
-        nameField = "name",
-        groups = {S6.class}
-)
-
-@ActionParentNameAnnotation(
-        appKeyField = "accessKey",
-        parentNameField = "parentActionName",
-        groups = {Sb8.class}
-)
-
-@MenuPermissionAnnotation(
-        appKeyField = "accessKey",
-        permissionNameField = "permissionName",
-        groups = {S8.class}
-)
-
 /**
- * Created by baidian on 12/14/15.
+ * 更新 url 的入参
+ *
+ * @author baidian
  */
 public class UpdateActionParam extends AclParam {
 
     private static final long serialVersionUID = 3735300054394735178L;
 
-    @NotEmpty(groups = {Sb3.class})
+    /**
+     * url 名称
+     */
     private String name;
 
-    @ExistSize(min = 1, max = 200, groups = {S4.class})
+    /**
+     * url 标题
+     */
     private String title;
 
-    @ExistSize(min = 1, max = 500, groups = {S5.class})
+    /**
+     * url 模式
+     * 例如：/apply/permission.htm
+     */
     private String pattern;
 
-    @ExistSize(min = 1, max = 2000, groups = {S7.class})
+    /**
+     * url 描述
+     */
     private String description;
 
+    /**
+     * 父 url 名称
+     */
     private String parentActionName;
 
+    /**
+     * 关联权限名
+     */
     private String permissionName;
 
+    /**
+     * 排序
+     */
     private Integer sort;
 
     public String getParentActionName() {

@@ -4,84 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.GroupSequence;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import com.alibaba.buc.acl.api.annotation.AclEnumAnnotation;
-import com.alibaba.buc.acl.api.annotation.AppKeyPrivilegeAnnotation;
-import com.alibaba.buc.acl.api.annotation.HasExistInDbAnnotation;
-import com.alibaba.buc.acl.api.annotation.NameFormatAnnotation;
-import com.alibaba.buc.acl.api.annotation.OfficialBucUserSingleAnnotation;
-import com.alibaba.buc.acl.api.annotation.role.OfficialBucUserListAnnotation;
-import com.alibaba.buc.acl.api.annotation.role.UserOrgBindingAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.Oper;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S10;
-import com.alibaba.buc.acl.api.annotation.sequence.S12;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.S3;
-import com.alibaba.buc.acl.api.annotation.sequence.S4;
-import com.alibaba.buc.acl.api.annotation.sequence.S5;
-import com.alibaba.buc.acl.api.annotation.sequence.S6;
-import com.alibaba.buc.acl.api.annotation.sequence.S7;
-import com.alibaba.buc.acl.api.annotation.sequence.S8;
-import com.alibaba.buc.acl.api.annotation.sequence.S9;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa3;
-import com.alibaba.buc.acl.api.annotation.sequence.Saa3;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb10;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb3;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb4;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb5;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb6;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb8;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb9;
 import com.alibaba.buc.acl.api.common.AclParam;
 
-@GroupSequence(
-        value = {
-                Sb1.class,
-                S1.class,
-                Sa1.class,
-                S2.class,
-                Oper.class,
-                Sb3.class,
-                S3.class,
-                Sa3.class,
-                Saa3.class,
-                Sb4.class,
-                S4.class,
-                Sb5.class,
-                S5.class,
-                Sb6.class,
-                S6.class,
-                S7.class,
-                Sb8.class,
-                S8.class,
-                Sb9.class,
-                S9.class,
-                Sb10.class,
-                S10.class,
-                S12.class,
-                CreateRoleParam.class
-        }
-)
-@AppKeyPrivilegeAnnotation(
-        appKeyField = "accessKey",
-        keyCenterAccessKeyField = "keyCenterAccessKey",
-        interfaceNameField = "RoleService.createRole",
-        groups = {Sa1.class}
-)
-
-
-@UserOrgBindingAnnotation(
-        ruleTypeField = "ruleType",
-        extentionMapField = "extentionMap",
-        groups = {S9.class}
-)
-
+/**
+ * 创建角色的入参
+ *
+ * @author taigao
+ */
 public class CreateRoleParam extends AclParam {
 
     private static final long serialVersionUID = 7115082483567508273L;
@@ -89,31 +18,21 @@ public class CreateRoleParam extends AclParam {
     /**
      * 英文名，必选
      */
-    @NotNull(groups = {Sb3.class})
-    @Size(min = 1, max = 200, groups = {S3.class})
-    @HasExistInDbAnnotation(type = "role", groups = {Sa3.class})
-    @NameFormatAnnotation(groups = {Saa3.class})
     private String name;
 
     /**
      * 角色中文标题，必选
      */
-    @NotNull(groups = {Sb4.class})
-    @Size(min = 1, max = 200, groups = {S4.class})
     private String title;
 
     /**
      * 角色描述，必选
      */
-    @NotNull(groups = {Sb5.class})
-    @Size(min = 1, max = 2000, groups = {S5.class})
     private String description;
 
     /**
      * 角色归属人的用户id，角色Owner，必选，角色Owner将作为权限申请流程中的审批人，如果归属人离职、转岗，请重新设置
      */
-    @NotNull(groups = {Sb6.class})
-    @OfficialBucUserSingleAnnotation(groups = {S6.class}, type = "create")
     private Integer ownerUserId;
 
     /**
@@ -124,7 +43,6 @@ public class CreateRoleParam extends AclParam {
      * <li>org:按部门审批</li>
      * </ul>
      */
-    @AclEnumAnnotation(scope = "random,self,org", groups = {S7.class})
     private String ruleType = "random";
 
     /**
@@ -133,7 +51,6 @@ public class CreateRoleParam extends AclParam {
      * 当ruleType为randow，self，parallel时，取审批人为approverUserIds的值。当ruleType为org时，不从approverUserIds取值。
      * </p>
      */
-    @OfficialBucUserListAnnotation(groups = {Sb8.class})
     private List<Integer> approverUserIds = new ArrayList<Integer>(8);
 
     /**
@@ -149,8 +66,6 @@ public class CreateRoleParam extends AclParam {
      * <p/>
      * 权限回收策略
      */
-
-    @AclEnumAnnotation(scope = "TRANSFER_REVOKE,RESERVE,REVOKE", groups = {S10.class})
     private String revokeRule;
 
 
@@ -169,13 +84,6 @@ public class CreateRoleParam extends AclParam {
      * value指定是否在授权和申请角色的时候一定要同时授予和申请模型对应的数据权限,true为必须，false不必须
      */
     private Map<String, Boolean> dataPermissionModelNameMap;
-
-
-    /**
-     * 角色指定的风险等级，角色的风险等级展示--> assignLevel 优先于 level
-     */
-    //  @AclEnumAnnotation(scope="L,M,H",groups ={S12.class})
-    //  private String assignLevel ;
 
     /**
      * 1.公开可申请
@@ -271,14 +179,5 @@ public class CreateRoleParam extends AclParam {
     public void setPublicAttri(String publicAttri) {
         this.publicAttri = publicAttri;
     }
-
-//	public String getAssignLevel() {
-//		return assignLevel;
-//	}
-//
-//
-//	public void setAssignLevel(String assignLevel) {
-//		this.assignLevel = assignLevel;
-//	}
 
 }

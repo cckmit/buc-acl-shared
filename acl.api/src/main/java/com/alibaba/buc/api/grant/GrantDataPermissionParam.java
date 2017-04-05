@@ -4,37 +4,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.GroupSequence;
-
-import com.alibaba.buc.acl.api.annotation.AppKeyPrivilegeAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.Oper;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
 import com.alibaba.buc.acl.api.common.AclParam;
 import com.alibaba.buc.api.param.Action;
 
-@GroupSequence(
-           value = {
-                   Sb1.class,
-                   S1.class,
-                   Sa1.class,
-                   S2.class,
-                   Oper.class,
-                   GrantDataPermissionParam.class
-           }
-   )
-
-@AppKeyPrivilegeAnnotation(
-       appKeyField = "accessKey",
-       keyCenterAccessKeyField="keyCenterAccessKey",
-       interfaceNameField = "GrantService.grantDataPermission",
-       groups = {Sa1.class}
-   )
 /**
  * 授予/冻结/移除数据权限
- * 类GrantDataPermissionParam.java的实现描述：TODO 类实现描述 
+ *
  * @author tongxu 2016年3月2日 下午2:29:05
  */
 public class GrantDataPermissionParam extends AclParam {

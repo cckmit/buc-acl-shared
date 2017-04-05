@@ -3,106 +3,13 @@ package com.alibaba.buc.acl.api.input.permission;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.GroupSequence;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import com.alibaba.buc.acl.api.annotation.AclEnumAnnotation;
-import com.alibaba.buc.acl.api.annotation.AppKeyPrivilegeAnnotation;
-import com.alibaba.buc.acl.api.annotation.CronExpressionAnnotation;
-import com.alibaba.buc.acl.api.annotation.HasExistInDbAnnotation;
-import com.alibaba.buc.acl.api.annotation.NameFormatAnnotation;
-import com.alibaba.buc.acl.api.annotation.OfficialBucUserSingleAnnotation;
-import com.alibaba.buc.acl.api.annotation.permission.BucOrgListAnnotation;
-import com.alibaba.buc.acl.api.annotation.permission.CaseMaxApplyDayAnnotation;
-import com.alibaba.buc.acl.api.annotation.role.OfficialBucUserListAnnotation;
-import com.alibaba.buc.acl.api.annotation.role.UserOrgBindingAnnotation;
-import com.alibaba.buc.acl.api.annotation.sequence.Oper;
-import com.alibaba.buc.acl.api.annotation.sequence.S1;
-import com.alibaba.buc.acl.api.annotation.sequence.S12;
-import com.alibaba.buc.acl.api.annotation.sequence.S16;
-import com.alibaba.buc.acl.api.annotation.sequence.S17;
-import com.alibaba.buc.acl.api.annotation.sequence.S18;
-import com.alibaba.buc.acl.api.annotation.sequence.S19;
-import com.alibaba.buc.acl.api.annotation.sequence.S2;
-import com.alibaba.buc.acl.api.annotation.sequence.S20;
-import com.alibaba.buc.acl.api.annotation.sequence.S3;
-import com.alibaba.buc.acl.api.annotation.sequence.S4;
-import com.alibaba.buc.acl.api.annotation.sequence.S5;
-import com.alibaba.buc.acl.api.annotation.sequence.S6;
-import com.alibaba.buc.acl.api.annotation.sequence.S7;
-import com.alibaba.buc.acl.api.annotation.sequence.S8;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sa3;
-import com.alibaba.buc.acl.api.annotation.sequence.Saa3;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb1;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb12;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb16;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb19;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb3;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb4;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb5;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb6;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb7;
-import com.alibaba.buc.acl.api.annotation.sequence.Sb8;
 import com.alibaba.buc.acl.api.common.AclParam;
-import com.alibaba.buc.api.annotation.sequence.S11;
 
-@GroupSequence(
-        value = {
-                Sb1.class,
-                S1.class,
-                Sa1.class,
-                S2.class,
-                Oper.class,
-                Sb3.class,
-                S3.class,
-                Sa3.class,
-                Saa3.class,
-                Sb4.class,
-                S4.class,
-                Sb5.class,
-                S5.class,
-                Sb6.class,
-                S6.class,
-                Sb7.class,
-                S7.class,
-                Sb8.class,
-                S8.class,
-                S11.class,
-                Sb12.class,
-                S12.class,
-                Sb16.class,
-                S16.class,
-                S17.class,
-                S18.class,
-                Sb19.class,
-                S19.class,
-                S20.class,
-                CreatePermissionParam.class
-        }
-)
-@AppKeyPrivilegeAnnotation(
-        appKeyField = "accessKey",
-        keyCenterAccessKeyField = "keyCenterAccessKey",
-        interfaceNameField = "PermissionService.createPermission",
-        groups = {Sa1.class}
-)
-
-
-@UserOrgBindingAnnotation(
-        ruleTypeField = "ruleType",
-        extentionMapField = "extentionMap",
-        groups = {S18.class}
-)
-
-@CaseMaxApplyDayAnnotation(
-        levelField = "riskLevelName",
-        maxApplyDayField = "maxApplyDay",
-        groups = {S20.class}
-)
-
-
+/**
+ * 创建权限的入参
+ *
+ * @author taigao
+ */
 public class CreatePermissionParam extends AclParam {
 
     private static final long serialVersionUID = -3114177970774303580L;
@@ -110,46 +17,32 @@ public class CreatePermissionParam extends AclParam {
     /**
      * 权限英文名，必选
      */
-    @NotNull(groups = {Sb3.class})
-    @Size(min = 1, max = 200, groups = {S3.class})
-    @HasExistInDbAnnotation(type = "permission", groups = {Sa3.class})
-    @NameFormatAnnotation(groups = {Saa3.class})
     private String name;
 
     /**
      * 权限中文名，必选
      */
-    @NotNull(groups = {Sb4.class})
-    @Size(min = 1, max = 200, groups = {S4.class})
     private String title;
 
     /**
      * 权限描述，必选
      */
-    @NotNull(groups = {Sb5.class})
-    @Size(min = 1, max = 2000, groups = {S5.class})
     private String description;
 
 
     /**
      * 权限风险等级，必选, 默认值为高风险；风险等级关系到申请流程，请根据实际情况选择
      */
-    @NotNull(groups = {Sb6.class})
-    @AclEnumAnnotation(scope = "L,M,H", groups = {S6.class})
     private String riskLevelName;
 
     /**
      * 权限归属人的用户id，权限Owner，必选，权限归属人将作为权限申请流程中的审批人，如果归属人离职、转岗，请重新设置
      */
-    @NotNull(groups = {Sb7.class})
-    @OfficialBucUserSingleAnnotation(groups = {S7.class}, type = "create")
     private Integer ownerUserId;
 
     /**
      * 功能效果，必选，权限控制的功能点在使用后产生的影响、效果等
      */
-    @NotNull(groups = {Sb8.class})
-    @Size(min = 1, max = 2000, groups = {S8.class})
     private String info;
 
     /**
@@ -166,14 +59,11 @@ public class CreatePermissionParam extends AclParam {
     /**
      * 权限关联的部门id，非必选
      */
-    @BucOrgListAnnotation(groups = {S11.class}, type = "create")
     private List<Integer> orgIds;
 
     /**
      * 权限功能点，请说明包含哪些功能点，必选
      */
-    @NotNull(groups = {Sb12.class})
-    @Size(min = 1, max = 2000, groups = {S12.class})
     private String feature;
 
     /**
@@ -202,8 +92,6 @@ public class CreatePermissionParam extends AclParam {
      * <li>org:按部门审批</li>
      * </ul>
      */
-    @NotNull(groups = {Sb16.class})
-    @AclEnumAnnotation(scope = "random,self,org", groups = {S16.class})
     private String ruleType = "random";
 
     /**
@@ -212,7 +100,6 @@ public class CreatePermissionParam extends AclParam {
      * 当ruleType为randow，self，parallel时，取审批人为approverUserIds的值。当ruleType为org时，不从approverUserIds取值。
      * </p>
      */
-    @OfficialBucUserListAnnotation(groups = {S17.class})
     private List<Integer> approverUserIds;
 
     /**
@@ -228,13 +115,10 @@ public class CreatePermissionParam extends AclParam {
      * <p/>
      * 权限回收策略
      */
-    @NotNull(groups = {Sb19.class})
-    @AclEnumAnnotation(scope = "TRANSFER_REVOKE,RESERVE,REVOKE", groups = {S19.class})
     private String revokeRule;
+
     /**
      * 最长申请天数;目前支持数字;高风险权限的最大值365
-     *
-     * @return
      */
     private Integer maxApplyDay;
 
@@ -260,7 +144,6 @@ public class CreatePermissionParam extends AclParam {
      * 比如 * * 22-1 * * ? *
      * 表示每天22点至次日凌晨1:59:59点生效
      */
-    @CronExpressionAnnotation(groups = {S2.class})
     private String effectiveTime;
 
     public String getName() {

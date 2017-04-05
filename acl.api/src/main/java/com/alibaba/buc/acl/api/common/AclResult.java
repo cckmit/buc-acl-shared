@@ -3,9 +3,7 @@ package com.alibaba.buc.acl.api.common;
 import java.io.Serializable;
 
 /**
- * 接口出参需要实现的接口
- * <p/>
- * 之后新增的接口出参都要实现本接口
+ * 接口出参基类
  *
  * @author yicheng.wp
  */

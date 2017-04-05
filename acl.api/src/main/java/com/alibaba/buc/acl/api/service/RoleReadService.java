@@ -25,10 +25,9 @@ public interface RoleReadService {
     RoleResult getRole(GetRoleParam param);
     
     /**
-     * 根据用户id和角色名称列表来判断用户是否直接拥有这些角色。
-     * @param param
-     * @return
+     * 已废弃，请勿调用
      */
+    @Deprecated
     CheckUserRolesResult checkUserRole(CheckUserRolesParam param);
     
     /**

@@ -4,18 +4,29 @@ import java.io.Serializable;
 
 /**
  * 带基础参数且不使用注解的对象
- * 类NormalAclParam.java的实现描述：TODO 类实现描述 
+ *
  * @author tongxu 2016年9月28日 上午10:01:05
  */
 public class NormalAclParam implements Serializable {
 
     private static final long serialVersionUID = 152341552939252108L;
 
-    private String accessKey;  // appKey 必填
+	/**
+	 * 必填，注册ACL的应用都会有一个accessKey，可在应用管理中查看
+	 */
+	private String accessKey;
 
-    private String keyCenterAccessKey; // 如果你是keyCenter,这个值不能为null,且必须正确。
+	/**
+	 * 非必填，BUC-KeyCenter accessKey，普通用户无需关注
+	 */
+	private String keyCenterAccessKey;
 
-    private Integer operatorUserId = -1000;   // 默认为-1000;操作人,最好要填,来源从SSO的client里面获取
+	/**
+	 * 非必填，接口操作人，建议填写以追溯操作此动作的员工是谁
+	 * 操作人userId可从SSO的client里面获取
+	 * 如果是系统操作，也可填写部门公共账号（即工作帐号）
+	 */
+	private Integer operatorUserId = -1000;
 
     public String getAccessKey() {
 		return accessKey;
@@ -43,5 +54,4 @@ public class NormalAclParam implements Serializable {
     public void setOperatorUserId(Integer operatorUserId) {
         this.operatorUserId = operatorUserId;
     }
-
 }
