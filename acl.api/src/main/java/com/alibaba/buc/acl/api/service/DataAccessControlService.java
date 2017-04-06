@@ -110,7 +110,7 @@ public interface DataAccessControlService {
     AclResult<AclPageResult<String>> pageUserDataPermissionDatas(PageUserDataPermissionDatasParam pageUserDataPermissionDatasParam,AclPagination page) throws BucException;
     
     /**
-     * 查询一个授权包含数据详情的接口，一次查询包含的数据不能超过100个
+     * 查询一个授权包含数据详情的接口，一次查询包含的授权code不能超过100个
      * @param findDataDetailParam
      * @return
      * @throws BucException
