@@ -100,7 +100,7 @@ public interface DataAccessControlService {
     /**
      * 分页查询用户授权数据的接口，会查询直接授予用户、通过角色、用户组、部门授予用户的数据权限数据
      * 
-     * 返回结果是数据name列表，数据详情需要调用findDataDetail获取
+     * 返回结果是每次授权code列表，数据详情需要调用findDataDetail获取
      * 
      * @param pageDataPermissionDatasParam
      * @param page
@@ -110,7 +110,7 @@ public interface DataAccessControlService {
     AclResult<AclPageResult<String>> pageUserDataPermissionDatas(PageUserDataPermissionDatasParam pageUserDataPermissionDatasParam,AclPagination page) throws BucException;
     
     /**
-     * 查询数据详情的接口，一次查询包含的数据不能超过100个
+     * 查询一个授权包含数据详情的接口，一次查询包含的数据不能超过100个
      * @param findDataDetailParam
      * @return
      * @throws BucException

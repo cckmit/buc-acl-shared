@@ -1,0 +1,7 @@
+<classpath>
+  <classpathentry kind="src" path="src/main/java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="var" path="M2_REPO/com/alibaba/platform/shared/buc.legacy/0.0.1/buc.legacy-0.0.1.jar" sourcepath="M2_REPO/com/alibaba/platform/shared/buc.legacy/0.0.1/buc.legacy-0.0.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.4/commons-lang-2.4.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.4/commons-lang-2.4-sources.jar"/>
+</classpath>

@@ -28,6 +28,11 @@ public class PageUserDataPermissionDatasParam extends NormalAclParam {
     private Integer           userId;  
     
     /**
+     * 操作code，不填则返回所有资源
+     */
+    private List<String>      operationNames;
+    
+    /**
      * ，过滤条件，数据权限name，可不填
      */
     private List<String>      dataPermissionNames;
@@ -66,6 +71,16 @@ public class PageUserDataPermissionDatasParam extends NormalAclParam {
     
     public void setDataPermissionNames(List<String> dataPermissionNames) {
         this.dataPermissionNames = dataPermissionNames;
+    }
+    
+    
+    public List<String> getOperationNames() {
+        return operationNames;
+    }
+
+    
+    public void setOperationNames(List<String> operationNames) {
+        this.operationNames = operationNames;
     }
 
     @Override
