@@ -5,7 +5,7 @@
     <parent>
         <artifactId>acl.shared.parent</artifactId>
         <groupId>com.alibaba.platform.shared</groupId>
-        <version>1.2.37</version>
+        <version>1.2.38.yc-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -127,7 +127,7 @@
                             <finalName>${artifactId}</finalName>
                             <imported>
                                 <!-- 配置是否使用外部三方容器中的类，默认为true，表明一些三方库从用户的WEB-INF/lib下面获取，语义和maven的provided类似 -->
-                                <usebizclassloader>false</usebizclassloader>
+                                <usebizclassloader>true</usebizclassloader>
                             </imported>
                             <!-- 配置导出类，对应生成export.properties -->
                             <export>
