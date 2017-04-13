@@ -5,7 +5,11 @@
     <parent>
         <artifactId>acl.shared.parent</artifactId>
         <groupId>com.alibaba.platform.shared</groupId>
+<<<<<<< HEAD
         <version>1.2.37-page-SNAPSHOT</version>
+=======
+        <version>1.2.37</version>
+>>>>>>> ae41ecd32ec0d159e9c102913fed051af2aee912
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -135,6 +139,7 @@
                                 <packages>
                                     <package>com.alibaba.buc.acl.api</package>
                                     <package>com.alibaba.buc.api</package>
+                                    <package>com.alibaba.buc.util</package>
                                 </packages>
                             </export>
                             <bundleRepository>target</bundleRepository>
