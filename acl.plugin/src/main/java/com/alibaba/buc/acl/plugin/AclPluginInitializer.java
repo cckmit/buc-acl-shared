@@ -17,13 +17,13 @@ public class AclPluginInitializer implements Initializer {
         ClassLoader bizClassLoader = context.getService(ClassLoaderService.class).getBizClassLoader();
 
         //control with user file
-        URL url = bizClassLoader.getResource("disable-pandora-acl");
+        URL url = bizClassLoader.getResource("disable-pandora-buc-acl");
         if (null != url) {
             return false;
         }
 
         //control with -D param
-        if (Boolean.getBoolean("disable.pandora.acl")) {
+        if (Boolean.getBoolean("disable.pandora.buc.acl")) {
             return false;
         }
 
