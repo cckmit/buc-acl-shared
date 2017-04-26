@@ -5,7 +5,7 @@
     <parent>
         <artifactId>acl.shared.parent</artifactId>
         <groupId>com.alibaba.platform.shared</groupId>
-        <version>1.2.38</version>
+        <version>1.2.39</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -43,6 +43,13 @@
             <groupId>com.alibaba.platform.shared</groupId>
             <artifactId>acl.api</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.taobao.pandora</groupId>
+            <artifactId>pandora.api</artifactId>
+            <version>2.1.3</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -125,9 +132,11 @@
                             <priority>20600</priority>
                             <!-- 配置插件的名字，务必配置对。比如hsf插件，则配置为 hsf -->
                             <finalName>${artifactId}</finalName>
+                            <!-- 配置Initializer，如果permitStartup返回false，表示不能启动 -->
+                            <initializer>com.alibaba.buc.acl.plugin.AclPluginInitializer</initializer>
                             <imported>
                                 <!-- 配置是否使用外部三方容器中的类，默认为true，表明一些三方库从用户的WEB-INF/lib下面获取，语义和maven的provided类似 -->
-                                <usebizclassloader>false</usebizclassloader>
+                                <usebizclassloader>true</usebizclassloader>
                             </imported>
                             <!-- 配置导出类，对应生成export.properties -->
                             <export>
