@@ -5,10 +5,10 @@
   <parent> 
     <groupId>com.alibaba.platform.shared</groupId>  
     <artifactId>acl.shared.parent</artifactId>  
-    <version>1.2.40</version>
+    <version>1.2.41</version>
   </parent>  
   <artifactId>acl.api</artifactId>  
-  <version>1.2.40</version>
+  <version>1.2.41</version>
   <!-- 请注意，开发版本 SNAPSHOT 需要大写 -->  
   <name>acl api project</name>  
   <dependencies> 
