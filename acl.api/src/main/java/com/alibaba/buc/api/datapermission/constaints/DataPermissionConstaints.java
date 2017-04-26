@@ -323,4 +323,9 @@ public class DataPermissionConstaints {
      */
     public static final Integer DEFAULT_HSF_DATA_SOURCE_TIME_OUT=3000;
     
+    /**
+     * 默认代表全选、所有的字符串，如果应用没有给自己的非必填属性定义代表所有的字符，acl默认使用此字符串代表所有
+     */
+    public static final String DEFAULT_ALL_SYMBOL = "*aclAllSymbol*";
+    
 }
