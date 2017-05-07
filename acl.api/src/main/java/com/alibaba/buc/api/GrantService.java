@@ -28,7 +28,7 @@ public interface GrantService {
      * @since 1.9
      */
 	@Deprecated
-    public void grantPermissionsToUser(GrantPermissionsToUserParam grantPermissionsToUserParam) throws BucException;
+    void grantPermissionsToUser(GrantPermissionsToUserParam grantPermissionsToUserParam) throws BucException;
     
     /**
      * 授予/冻结/移除用户角色
@@ -40,7 +40,7 @@ public interface GrantService {
      * @since 1.9
      */
 	@Deprecated
-    public void grantRolesToUser(GrantRolesToUserParam grantRolesToUserParam) throws BucException;
+    void grantRolesToUser(GrantRolesToUserParam grantRolesToUserParam) throws BucException;
 
     
 
@@ -55,7 +55,7 @@ public interface GrantService {
      * @since 1.9
      */
 	@Deprecated
-    public void grantPermissionsToUsergroup(GrantPermissionsToUsergroupParam grantPermissionsToUsergroupParam) throws BucException;
+    void grantPermissionsToUsergroup(GrantPermissionsToUsergroupParam grantPermissionsToUsergroupParam) throws BucException;
 
     /**
      * 授予/冻结/移除用户组角色
@@ -67,7 +67,7 @@ public interface GrantService {
      * @since 1.9
      */
 	@Deprecated
-    public void grantRolesToUsergroup(GrantRolesToUsergroupParam grantRolesToUsergroupParam) throws BucException;
+    void grantRolesToUsergroup(GrantRolesToUsergroupParam grantRolesToUsergroupParam) throws BucException;
     
     
     
@@ -84,7 +84,7 @@ public interface GrantService {
      * @since 1.0
      */
     @Deprecated
-    public void grantPermissionToUser(Principal principal, String appName, List<UserPermissionParam> userPermissions)
+    void grantPermissionToUser(Principal principal, String appName, List<UserPermissionParam> userPermissions)
                                                                                                                      throws BucException;
     
     /**
@@ -99,7 +99,7 @@ public interface GrantService {
      * @since 1.0
      */
     @Deprecated
-    public void grantRoleToUser(Principal principal, String appName, List<UserRoleParam> userRoles) throws BucException;
+    void grantRoleToUser(Principal principal, String appName, List<UserRoleParam> userRoles) throws BucException;
     
     /**
      * @deprecated {@link GrantService#grantPermissionsToUsergroup(GrantPermissionsToUsergroupParam)}
@@ -114,7 +114,7 @@ public interface GrantService {
      * @since 1.0
      */
     @Deprecated
-    public void grantPermissionToUsergroup(Principal principal, String appName,
-                                           List<UsergroupPermissionParam> usergroupPermissions) throws BucException;
+    void grantPermissionToUsergroup(Principal principal, String appName,
+                                    List<UsergroupPermissionParam> usergroupPermissions) throws BucException;
     
 }
