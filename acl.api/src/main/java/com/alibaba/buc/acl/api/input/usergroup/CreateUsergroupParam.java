@@ -93,7 +93,7 @@ public class CreateUsergroupParam extends AclParam {
     /**
      * 如果是type = 3 必填, 项目信息
      */
-    private List<ProjectInfo> projectInfos;
+    private List<String> projectIds;
 
     /**
      * 如果是type = 3 非必填, 用户组子管理员的 userId
@@ -111,9 +111,9 @@ public class CreateUsergroupParam extends AclParam {
     private Boolean isSubManageElement = false;
 
     /**
-     * 如果是type = 3 或者 2 非必填, 职位描述
+     * 如果是type = 3 或者 2 非必填, 职位描述, 对应主数据职位信息
      */
-    private List<String> jobDescs;
+    private List<String> jobIds;
 
     /**
      * 如果是type = 3 或者 2 必填, 当用户与用户组不匹配时通知
@@ -260,12 +260,12 @@ public class CreateUsergroupParam extends AclParam {
         this.isAutoRemoveUser = isAutoRemoveUser;
     }
 
-    public List<ProjectInfo> getProjectInfos() {
-        return projectInfos;
+    public List<String> getProjectIds() {
+        return projectIds;
     }
 
-    public void setProjectInfos(List<ProjectInfo> projectInfos) {
-        this.projectInfos = projectInfos;
+    public void setProjectIds(List<String> projectIds) {
+        this.projectIds = projectIds;
     }
 
     public List<Integer> getSubAdminUserIds() {
@@ -292,12 +292,12 @@ public class CreateUsergroupParam extends AclParam {
         this.isSubManageElement = isSubManageElement;
     }
 
-    public List<String> getJobDescs() {
-        return jobDescs;
+    public List<String> getJobIds() {
+        return jobIds;
     }
 
-    public void setJobDesc(List<String> jobDescs) {
-        this.jobDescs = jobDescs;
+    public void setJobIds(List<String> jobIds) {
+        this.jobIds = jobIds;
     }
 
     public Boolean getIsMisMatchNotify() {

@@ -11,8 +11,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import com.alibaba.buc.acl.api.input.usergroup.ProjectInfo;
-
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 /**
@@ -95,7 +93,7 @@ public class UsergroupParam implements Serializable {
     /**
      * 如果是type = 3 必填, 项目信息
      */
-    private List<ProjectInfo> projectInfos;
+    private List<String> projectIds;
 
     /**
      * 如果是type = 3 非必填, 用户组子管理员的 userId
@@ -115,7 +113,7 @@ public class UsergroupParam implements Serializable {
     /**
      * 如果是type = 3 或者 2 非必填, 职位描述
      */
-    private List<String> jobDescs;
+    private List<String> jobIds;
 
     /**
      * 如果是type = 3 或者 2 必填, 当用户与用户组不匹配时通知
@@ -174,6 +172,7 @@ public class UsergroupParam implements Serializable {
         this.adminUserIds = adminUserIds;
     }
 
+    @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
@@ -258,12 +257,12 @@ public class UsergroupParam implements Serializable {
         this.isAutoRemoveUser = isAutoRemoveUser;
     }
 
-    public List<ProjectInfo> getProjectInfos() {
-        return projectInfos;
+    public List<String> getProjectIds() {
+        return projectIds;
     }
 
-    public void setProjectInfos(List<ProjectInfo> projectInfos) {
-        this.projectInfos = projectInfos;
+    public void setProjectIds(List<String> projectIds) {
+        this.projectIds = projectIds;
     }
 
     public List<Integer> getSubAdminUserIds() {
@@ -290,12 +289,12 @@ public class UsergroupParam implements Serializable {
         this.isSubManageElement = isSubManageElement;
     }
 
-    public List<String> getJobDescs() {
-        return jobDescs;
+    public List<String> getJobIds() {
+        return jobIds;
     }
 
-    public void setJobDesc(List<String> jobDescs) {
-        this.jobDescs = jobDescs;
+    public void setJobIds(List<String> jobIds) {
+        this.jobIds = jobIds;
     }
 
     public Boolean getIsMisMatchNotify() {
