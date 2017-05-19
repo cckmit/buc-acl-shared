@@ -5,11 +5,7 @@
     <parent>
         <artifactId>acl.shared.parent</artifactId>
         <groupId>com.alibaba.platform.shared</groupId>
-<<<<<<< HEAD
         <version>1.2.43-bd-SNAPSHOT</version>
-=======
-        <version>1.2.42</version>
->>>>>>> f803b87a15561fbd390eeb371a1ea9410198a7d0
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
