@@ -6,4 +6,5 @@ target
 *.iml
 auto-config.xml.log
 .idea/*
+.DS_Store
 

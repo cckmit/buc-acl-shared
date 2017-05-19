@@ -10,7 +10,7 @@
   <groupId>com.alibaba.platform.shared</groupId>  
   <artifactId>acl.shared.parent</artifactId>  
   <version>1.2.43-bd-SNAPSHOT</version>
-  <!-- 请注意，开发版本 SNAPSHOT 需要大写 -->  
+  <!-- 请注意，开发版本 SNAPSHOT 需要大写 -->
   <packaging>pom</packaging>  
   <name>ACL Shared Parent Project</name>  
   <modules> 
