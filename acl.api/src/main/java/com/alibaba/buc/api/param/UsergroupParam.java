@@ -86,9 +86,9 @@ public class UsergroupParam implements Serializable {
     private Boolean isAutoDisbandUsergroup = false;
 
     /**
-     * 如果是type = 4 必填, 自动移出用户
+     * 如果是type = 4 必填, 提前3天通知管理员
      */
-    private Boolean isAutoRemoveUser = false;
+    private Boolean isExpirationNotify = false;
 
     /**
      * 如果是type = 3 必填, 项目信息
@@ -249,12 +249,12 @@ public class UsergroupParam implements Serializable {
         this.isAutoDisbandUsergroup = isAutoDisbandUsergroup;
     }
 
-    public Boolean getIsAutoRemoveUser() {
-        return isAutoRemoveUser;
+    public Boolean getIsExpirationNotify() {
+        return isExpirationNotify;
     }
 
-    public void setIsAutoRemoveUser(Boolean isAutoRemoveUser) {
-        this.isAutoRemoveUser = isAutoRemoveUser;
+    public void setIsExpirationNotify(Boolean isExpirationNotify) {
+        this.isExpirationNotify = isExpirationNotify;
     }
 
     public List<String> getProjectIds() {
