@@ -29,73 +29,14 @@ import com.alibaba.buc.api.exception.BucException;
  */
 public interface DataAccessControlService {
 
-    /**
-     * 数据权限验权
-     * @param dataPermission
-     * @return
-     * @throws BucException
-     */
-    AclResult<Map<DataProfileParam, CheckDataPermissionResult>> checkDataPermission(AuthProfileParam dataPermission) throws BucException;
     
     /**
-     * 新数据权限验权，会校验数据模型等
+     * 数据权限验权，会校验数据模型等
      * @param dataPermission
      * @return
      * @throws BucException
      */
     AclResult<Map<DataProfileParam, CheckDataPermissionResult>> newCheckDataPermission(NewAuthProfileParam dataPermission) throws BucException;
-    
-    /**
-     * 获取用户可以执行的所有操作
-     * @param getDataPermissionOperationsParam
-     * @return
-     * @throws BucException
-     */
-    AclResult<List<OperationResult>> getDataPermissionOperations(GetDataPermissionOperationsParam getDataPermissionOperationsParam) throws BucException;
-    
-    
-    /**
-     * 获取授权对象可以执行的所有操作，授权对象目前支持角色
-     * @param getDataPermissionOperationsParam
-     * @return
-     * @throws BucException
-     */
-    AclResult<List<OperationResult>> getOperationsByGrantObject(GetOperationsByGrantObjectParam getDataPermissionOperationsParam) throws BucException;
-    
-    
-    /**
-     * 获取授予用户的所有数据，推荐使用pageUserDataPermissionDatas
-     * @param getDataPermissionDatasParam
-     * @return
-     * @throws BucException
-     */
-    @Deprecated
-    AclResult<List<ResourceDescriptorResult>> getDataPermissionDatas(GetDataPermissionDatasParam getDataPermissionDatasParam) throws BucException;
-    
-    
-    /**
-     * 获取授予对象的所有数据
-     * @param getDataPermissionDatasParam
-     * @return
-     * @throws BucException
-     */
-    AclResult<List<ResourceDescriptorResult>> getDatasByGrantObject(GetDatasByGrantObjectParam getDatasByGrantObjectParam) throws BucException;
-    
-    /**
-     * 获取授予用户的所有数据
-     * 
-     * 返回结果只包含数据value列表，而不区分value所属属性
-     * 
-     * 所以只支持业务场景比较简单，数据权限模型仅包含一个属性的应用调用
-     * 
-     * 推荐使用pageUserDataPermissionDatas
-     * 
-     * @param getDataPermissionDatasParam
-     * @return
-     * @throws BucException
-     */
-    @Deprecated
-    AclResult<List<String>> getSimpleDataPermissionDatas(GetDataPermissionDatasParam getDataPermissionDatasParam) throws BucException;
     
     /**
      * 分页查询用户授权数据的接口，会查询直接授予用户、通过角色、用户组、部门授予用户的数据权限数据
@@ -116,4 +57,84 @@ public interface DataAccessControlService {
      * @throws BucException
      */
     AclResult<List<DataResult>> findDataDetail(FindDataDetailParam findDataDetailParam) throws BucException;
+    
+    /**
+     * pageUserDataPermissionDatas的http调用，hsf请勿调用
+     * @param jsonParam
+     * @return
+     * @throws BucException
+     */
+    AclResult<AclPageResult<String>> pageUserDataPermissionDatasForHttp(String jsonParam) throws BucException;
+    
+    /**
+     * findDataDetail的http调用，hsf请勿调用
+     * @param jsonParam
+     * @return
+     * @throws BucException
+     */
+    AclResult<List<DataResult>> findDataDetailForHttp(String jsonParam) throws BucException;
+    
+    /**
+     * 获取用户可以执行的所有操作
+     * @param getDataPermissionOperationsParam
+     * @return
+     * @throws BucException
+     */
+    @Deprecated
+    AclResult<List<OperationResult>> getDataPermissionOperations(GetDataPermissionOperationsParam getDataPermissionOperationsParam) throws BucException;
+    
+    
+    /**
+     * 获取授权对象可以执行的所有操作，授权对象目前支持角色
+     * @param getDataPermissionOperationsParam
+     * @return
+     * @throws BucException
+     */
+    @Deprecated
+    AclResult<List<OperationResult>> getOperationsByGrantObject(GetOperationsByGrantObjectParam getDataPermissionOperationsParam) throws BucException;
+    
+    
+    /**
+     * 获取授予用户的所有数据，推荐使用pageUserDataPermissionDatas
+     * @param getDataPermissionDatasParam
+     * @return
+     * @throws BucException
+     */
+    @Deprecated
+    AclResult<List<ResourceDescriptorResult>> getDataPermissionDatas(GetDataPermissionDatasParam getDataPermissionDatasParam) throws BucException;
+    
+    
+    /**
+     * 获取授予对象的所有数据
+     * @param getDataPermissionDatasParam
+     * @return
+     * @throws BucException
+     */
+    @Deprecated
+    AclResult<List<ResourceDescriptorResult>> getDatasByGrantObject(GetDatasByGrantObjectParam getDatasByGrantObjectParam) throws BucException;
+    
+    /**
+     * 获取授予用户的所有数据
+     * 
+     * 返回结果只包含数据value列表，而不区分value所属属性
+     * 
+     * 所以只支持业务场景比较简单，数据权限模型仅包含一个属性的应用调用
+     * 
+     * 推荐使用pageUserDataPermissionDatas
+     * 
+     * @param getDataPermissionDatasParam
+     * @return
+     * @throws BucException
+     */
+    @Deprecated
+    AclResult<List<String>> getSimpleDataPermissionDatas(GetDataPermissionDatasParam getDataPermissionDatasParam) throws BucException;
+    
+    /**
+     * 数据权限验权，已废弃，遇到大数据量授权会出现性能问题，请使用newCheckDataPermission
+     * @param dataPermission
+     * @return
+     * @throws BucException
+     */
+    @Deprecated
+    AclResult<Map<DataProfileParam, CheckDataPermissionResult>> checkDataPermission(AuthProfileParam dataPermission) throws BucException;
 }
