@@ -1,0 +1,10 @@
+pom.xml.versionsBackup
+.settings
+target
+.classpath
+.project
+*.iml
+auto-config.xml.log
+.idea/*
+.DS_Store
+
