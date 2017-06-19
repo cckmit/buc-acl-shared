@@ -68,7 +68,7 @@ public interface DataAccessControlService {
      * @return
      * @throws BucException
      */
-    AclPageResult<OperationResult> pageUserOperations(PageUserOperationsParam pageUserOperationsParam,AclPagination page) throws BucException;
+    AclResult<AclPageResult<OperationResult>> pageUserOperations(PageUserOperationsParam pageUserOperationsParam,AclPagination page) throws BucException;
     
     /**
      * 查询角色、用户组等授权对象可执行的操作
@@ -77,7 +77,7 @@ public interface DataAccessControlService {
      * @return
      * @throws BucException
      */
-    AclPageResult<OperationResult> pageGrantObjectOperations(PageGrantObjectOperationsParam pageGrantObjectOperationsParam,AclPagination page) throws BucException;
+    AclResult<AclPageResult<OperationResult>> pageGrantObjectOperations(PageGrantObjectOperationsParam pageGrantObjectOperationsParam,AclPagination page) throws BucException;
     
     /**
      * 分页查询角色、用户组等授权对象拥有的数据
@@ -86,7 +86,7 @@ public interface DataAccessControlService {
      * @return
      * @throws BucException
      */
-    AclPageResult<String> pageGrantObjectDatas(PageGrantObjectDatasParam pageGrantObjectDatasParam,AclPagination page) throws BucException;
+    AclResult<AclPageResult<String>> pageGrantObjectDatas(PageGrantObjectDatasParam pageGrantObjectDatasParam,AclPagination page) throws BucException;
     
     /**
      * pageUserDataPermissionDatas的http调用，hsf请勿调用
