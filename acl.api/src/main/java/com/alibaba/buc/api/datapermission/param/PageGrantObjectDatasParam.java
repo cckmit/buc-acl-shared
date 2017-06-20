@@ -14,7 +14,6 @@ import com.alibaba.buc.acl.api.common.AclParam;
  */
 public class PageGrantObjectDatasParam extends AclParam {
 
-    
     /**
      * 序列化版本号
      */
@@ -34,14 +33,12 @@ public class PageGrantObjectDatasParam extends AclParam {
      * 操作code，不填则返回所有资源
      */
     private List<String>      operationNames;
-    
+
     /**
-     * 来源角色name列表，设定只返回通过拥有roleNames角色而拥有的数据
-     * 
-     * 目前这个参数只作用于查用户数据的业务场景，查角色下数据请设置grantObjectName
-     * 
+     * ，过滤条件，数据权限name，可不填
      */
-    private List<String>      roleNames;
+    private List<String>      dataPermissionNames;
+    
     
     public List<String> getOperationNames() {
         return operationNames;
@@ -51,16 +48,14 @@ public class PageGrantObjectDatasParam extends AclParam {
         this.operationNames = operationNames;
     }       
     
-    
-    public List<String> getRoleNames() {
-        return roleNames;
+    public List<String> getDataPermissionNames() {
+        return dataPermissionNames;
     }
 
-    
-    public void setRoleNames(List<String> roleNames) {
-        this.roleNames = roleNames;
+    public void setDataPermissionNames(List<String> dataPermissionNames) {
+        this.dataPermissionNames = dataPermissionNames;
     }
-    
+
     public String getGrantObjectName() {
         return grantObjectName;
     }
