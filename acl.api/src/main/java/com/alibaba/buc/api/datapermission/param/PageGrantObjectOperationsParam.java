@@ -1,5 +1,7 @@
 package com.alibaba.buc.api.datapermission.param;
 
+import java.util.List;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -27,6 +29,11 @@ public class PageGrantObjectOperationsParam extends AclParam {
      * DataPermissionConstaints.GRANT_OBJECT_TYPE_ROLE代表角色（目前仅支持角色）
      */
     private String            grantObjectType;
+    
+    /**
+     * ，过滤条件，数据权限name，可不填
+     */
+    private List<String>      dataPermissionNames;
 
     public String getGrantObjectName() {
         return grantObjectName;
@@ -37,15 +44,25 @@ public class PageGrantObjectOperationsParam extends AclParam {
         this.grantObjectName = grantObjectName;
     }
 
-    
     public String getGrantObjectType() {
         return grantObjectType;
     }
-
     
     public void setGrantObjectType(String grantObjectType) {
         this.grantObjectType = grantObjectType;
     }
+    
+    
+    public List<String> getDataPermissionNames() {
+        return dataPermissionNames;
+    }
+
+
+    
+    public void setDataPermissionNames(List<String> dataPermissionNames) {
+        this.dataPermissionNames = dataPermissionNames;
+    }
+
 
     @Override
     public int hashCode() {

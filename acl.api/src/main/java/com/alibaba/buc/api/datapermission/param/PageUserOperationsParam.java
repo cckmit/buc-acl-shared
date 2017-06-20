@@ -1,5 +1,7 @@
 package com.alibaba.buc.api.datapermission.param;
 
+import java.util.List;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -21,6 +23,11 @@ public class PageUserOperationsParam extends AclParam {
      * 用户id
      */
     private Integer           userId;
+    
+    /**
+     * ，过滤条件，数据权限name，可不填
+     */
+    private List<String>      dataPermissionNames;
 
     public Integer getUserId() {
         return userId;
@@ -30,6 +37,14 @@ public class PageUserOperationsParam extends AclParam {
         this.userId = userId;
     }  
     
+    public List<String> getDataPermissionNames() {
+        return dataPermissionNames;
+    }
+
+    public void setDataPermissionNames(List<String> dataPermissionNames) {
+        this.dataPermissionNames = dataPermissionNames;
+    }
+
     @Override
     public int hashCode() {
         return  HashCodeBuilder.reflectionHashCode(this);
