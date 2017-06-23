@@ -55,7 +55,7 @@ public interface RoleService {
      * @return
      * @throws BucException
      */
-    AclResult<Page<Role>> pageRolesByPermissionForHttp(PageRolesByPermissionParam param, AclPagination page) throws BucException;
+    AclResult<AclPageResult<Page<Role>>> pageRolesByPermissionForHttp(PageRolesByPermissionParam param, AclPagination page) throws BucException;
     
     /**
      * 取得所有包含指定权限的角色
