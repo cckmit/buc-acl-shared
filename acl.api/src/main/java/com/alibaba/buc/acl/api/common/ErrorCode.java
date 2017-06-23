@@ -28,4 +28,14 @@ public class ErrorCode {
      * 数据权限发起申请失败
      */
     public static final int DATA_PERMISSION_APPLY_ERROR = 30005;
+    
+    /**
+     * 分页查询有权限角色错误
+     */
+    public static final int PAGE_ROLES_BY_PERMISSION_ERROR = 31000;
+    
+    /**
+     * 分页查询有角色权限错误
+     */
+    public static final int PAGE_PERMISSIONS_BY_ROLE_ERROR = 31001;
 }
