@@ -2,15 +2,13 @@ package com.alibaba.buc.api;
 
 import java.util.List;
 
+import com.alibaba.buc.acl.api.common.AclResult;
 import com.alibaba.buc.api.common.AclPageResult;
 import com.alibaba.buc.api.common.AclPagination;
 import com.alibaba.buc.api.condition.PageCondition;
 import com.alibaba.buc.api.condition.RoleQueryByPermissionCondition;
 import com.alibaba.buc.api.condition.RoleQueryCondition;
-import com.alibaba.buc.api.role.AddDataToRoleParam;
 import com.alibaba.buc.api.data.DataResult;
-import com.alibaba.buc.api.role.GetDataFromRoleParam;
-import com.alibaba.buc.api.role.RemoveDataFromRoleParam;
 import com.alibaba.buc.api.exception.BucException;
 import com.alibaba.buc.api.model.Page;
 import com.alibaba.buc.api.model.Resource;
@@ -22,14 +20,17 @@ import com.alibaba.buc.api.param.RoleRelationParam;
 import com.alibaba.buc.api.permission.PermissionResult;
 import com.alibaba.buc.api.result.RoleResultModel;
 import com.alibaba.buc.api.result.UserResultModel;
+import com.alibaba.buc.api.role.AddDataToRoleParam;
 import com.alibaba.buc.api.role.AddPermissionsToRoleParam;
 import com.alibaba.buc.api.role.CreateMultiRoleParam;
 import com.alibaba.buc.api.role.CreateRoleParam;
 import com.alibaba.buc.api.role.DeleteRoleParam;
+import com.alibaba.buc.api.role.GetDataFromRoleParam;
 import com.alibaba.buc.api.role.GetRoleParam;
 import com.alibaba.buc.api.role.PagePermissionByRoleNameParam;
 import com.alibaba.buc.api.role.PageRolesByPermissionParam;
 import com.alibaba.buc.api.role.PageSubRolesByRoleNameParam;
+import com.alibaba.buc.api.role.RemoveDataFromRoleParam;
 import com.alibaba.buc.api.role.RemovePermissionsFromRoleParam;
 import com.alibaba.buc.api.role.RoleResult;
 import com.alibaba.buc.api.role.UpdateMultiRoleParam;
@@ -46,6 +47,14 @@ public interface RoleService {
      * @throws BucException
      */
     Page<Role> pageRolesByPermission(PageCondition<RoleQueryByPermissionCondition> condition) throws BucException;
+    
+    /**
+     * 取得所有包含指定权限的角色，为适配epaas平台提供http服务专用
+     * @param condition
+     * @return
+     * @throws BucException
+     */
+    AclResult<Page<Role>> pageRolesByPermissionForHttp(PageCondition<RoleQueryByPermissionCondition> condition) throws BucException;
     
     /**
      * 取得所有包含指定权限的角色
@@ -226,6 +235,11 @@ public interface RoleService {
      * 分页查询某个角色下面的权限列表
      */
     public AclPageResult<PermissionResult> pagePermissionsByRoleName(PagePermissionByRoleNameParam req, AclPagination page) throws BucException;
+    
+    /**
+     * 分页查询某个角色下面的权限列表，为适配epaas平台提供http服务专用
+     */
+    public AclResult<AclPageResult<PermissionResult>> pagePermissionsByRoleNameForHttp(PagePermissionByRoleNameParam req, AclPagination page) throws BucException;
     
 
     /**
