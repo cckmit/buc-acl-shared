@@ -50,11 +50,12 @@ public interface RoleService {
     
     /**
      * 取得所有包含指定权限的角色，为适配epaas平台提供http服务专用
-     * @param condition
+     * @param param
+     * @param page
      * @return
      * @throws BucException
      */
-    AclResult<Page<Role>> pageRolesByPermissionForHttp(PageCondition<RoleQueryByPermissionCondition> condition) throws BucException;
+    AclResult<Page<Role>> pageRolesByPermissionForHttp(PageRolesByPermissionParam param, AclPagination page) throws BucException;
     
     /**
      * 取得所有包含指定权限的角色
