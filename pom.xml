@@ -9,7 +9,7 @@
   </parent>  
   <groupId>com.alibaba.platform.shared</groupId>  
   <artifactId>acl.shared.parent</artifactId>  
-  <version>1.2.45-perf-SNAPSHOT</version>
+  <version>1.2.45</version>
   <!-- 请注意，开发版本 SNAPSHOT 需要大写 -->
   <packaging>pom</packaging>
   <name>ACL Shared Parent Project</name>  
