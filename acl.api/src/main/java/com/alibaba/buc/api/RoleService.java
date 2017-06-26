@@ -46,7 +46,7 @@ public interface RoleService {
      * @return
      * @throws BucException
      */
-    Page<Role> pageRolesByPermission(PageCondition<RoleQueryByPermissionCondition> condition) throws BucException;
+    public Page<Role> pageRolesByPermission(PageCondition<RoleQueryByPermissionCondition> condition) throws BucException;
     
     /**
      * 取得所有包含指定权限的角色，为适配epaas平台提供http服务专用
@@ -55,7 +55,7 @@ public interface RoleService {
      * @return
      * @throws BucException
      */
-    AclResult<AclPageResult<RoleResult>> pageRolesByPermissionForHttp(PageRolesByPermissionParam param, AclPagination page) throws BucException;
+    public AclResult<AclPageResult<RoleResult>> pageRolesByPermissionForHttp(PageRolesByPermissionParam param, AclPagination page) throws BucException;
     
     /**
      * 取得所有包含指定权限的角色
