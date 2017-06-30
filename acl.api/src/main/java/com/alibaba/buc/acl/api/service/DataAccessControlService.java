@@ -81,6 +81,9 @@ public interface DataAccessControlService {
     
     /**
      * 分页查询角色、用户组等授权对象拥有的数据
+     * 
+     * 返回结果是每次授权code列表，数据详情需要调用findDataDetail获取
+     * 
      * @param pageGrantObjectDatasParam
      * @param page
      * @return
