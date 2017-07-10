@@ -76,6 +76,16 @@ public class CreateUsergroupParam extends AclParam {
     private Boolean isElementIdleRemove = false;
 
     /**
+     * 当组成员闲置时通知管理员
+     */
+    private Boolean isMemberIdleNotify = false;
+
+    /**
+     * 当组成员限闲置时自动移出
+     */
+    private Boolean isMemberIdleRemove = false;
+
+    /**
      * 如果是type = 4 必填, 项目有效期
      */
     private Date expireDate;
@@ -236,6 +246,22 @@ public class CreateUsergroupParam extends AclParam {
         this.isElementIdleRemove = isElementIdleRemove;
     }
 
+    public Boolean getIsMemberIdleNotify() {
+        return isMemberIdleNotify;
+    }
+
+    public void setIsMemberIdleNotify(Boolean isMemberIdleNotify) {
+        this.isMemberIdleNotify = isMemberIdleNotify;
+    }
+
+    public Boolean getIsMemberIdleRemove() {
+        return isMemberIdleRemove;
+    }
+
+    public void setIsMemberIdleRemove(Boolean isMemberIdleRemove) {
+        this.isMemberIdleRemove = isMemberIdleRemove;
+    }
+
     public Date getExpireDate() {
         return expireDate;
     }
@@ -339,4 +365,5 @@ public class CreateUsergroupParam extends AclParam {
     public void setRelateOrgIds(List<Integer> relateOrgIds) {
         this.relateOrgIds = relateOrgIds;
     }
+
 }

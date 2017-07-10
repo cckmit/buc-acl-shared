@@ -18,6 +18,7 @@ package com.alibaba.buc.api;
 import java.util.List;
 import java.util.Map;
 
+import com.alibaba.buc.acl.api.input.check.CheckPermissionsParam;
 import com.alibaba.buc.api.check.CheckPermissionDataParam;
 import com.alibaba.buc.api.check.CheckPermissionDataResult;
 import com.alibaba.buc.api.check.CheckPermissionParam;
@@ -30,12 +31,12 @@ import com.alibaba.buc.api.check.GetPermissionsDataParam;
 import com.alibaba.buc.api.check.GetPermissionsDataResult;
 import com.alibaba.buc.api.check.GetRolesDataParam;
 import com.alibaba.buc.api.check.GetRolesDataResult;
-import com.alibaba.buc.api.condition.CheckPermissionCondition;
 import com.alibaba.buc.api.condition.PermissionCondition;
 import com.alibaba.buc.api.condition.RoleCondition;
 import com.alibaba.buc.api.condition.UserCondition;
 import com.alibaba.buc.api.condition.permission.CheckDynamcPermissionCondition;
 import com.alibaba.buc.api.condition.permission.DynamicPermissionCondition;
+import com.alibaba.buc.api.datapermission.param.NewAuthProfileParam;
 import com.alibaba.buc.api.exception.BucException;
 import com.alibaba.buc.api.model.PermissionResult;
 import com.alibaba.buc.api.permission.check.CheckCriteria;
@@ -58,6 +59,8 @@ public interface AccessControlService {
      * @return List<CheckPermissionResult>
      * @throws BucException
      * @since 1.9
+     *
+     * @deprecated {@link com.alibaba.buc.acl.api.service.AccessControlService#checkPermissions(CheckPermissionsParam)}
      */
 	@Deprecated
     List<CheckPermissionResult> checkPermissions(CheckPermissionParam checkPermissionParam) throws BucException;
@@ -69,6 +72,8 @@ public interface AccessControlService {
      * 
      * @param checkDynamcPermissionCondition 动态权限查询条件。
      * @throws BucException
+     *
+     * @deprecated {@link com.alibaba.buc.acl.api.service.DataAccessControlService#newCheckDataPermission(NewAuthProfileParam)}
      */
 	@Deprecated
     Map<DynamicPermissionCondition, CheckPermissionResultModel> checkPermissions(CheckDynamcPermissionCondition checkDynamcPermissionCondition)
@@ -92,6 +97,7 @@ public interface AccessControlService {
      * @return List<CheckPermissionDataResult>
      * @throws BucException
      * @since 1.1.0
+     *
      */
     List<CheckPermissionDataResult> checkPermissionData(CheckPermissionDataParam checkPermissionDataParam)
                                                                                                           throws BucException;
@@ -132,10 +138,9 @@ public interface AccessControlService {
     /**
      * 验权
      *
-     * @deprecated {@link AccessControlService#checkPermissions(CheckPermissionParam)}
-     * @since 0.3 {@link PermissionCondition} @deprecated
-     * @since 1.0 {@link CheckPermissionCondition}
+     * @deprecated {@link com.alibaba.buc.acl.api.service.AccessControlService#checkPermissions(CheckPermissionsParam)}
      * @throws BucException
+     *
      */
     @Deprecated
     Map<String, CheckPermissionResultModel> checkPermissions(PermissionCondition permissionCondition)
@@ -144,9 +149,10 @@ public interface AccessControlService {
     /**
      * 验权
      * 
-     * @deprecated {@link AccessControlService#checkPermissions(PermissionCondition)}
+     * @deprecated {@link com.alibaba.buc.acl.api.service.AccessControlService#checkPermissions(CheckPermissionsParam)}
      * @since 0.2
      * @throws BucException
+     *
      */
     @Deprecated
     List<PermissionResult> checkPermissions(CheckCriteria checkCriteria) throws BucException;
