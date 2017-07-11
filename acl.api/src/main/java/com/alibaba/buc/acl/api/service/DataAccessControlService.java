@@ -14,7 +14,10 @@ import com.alibaba.buc.api.datapermission.param.GetDataPermissionOperationsParam
 import com.alibaba.buc.api.datapermission.param.GetDatasByGrantObjectParam;
 import com.alibaba.buc.api.datapermission.param.GetOperationsByGrantObjectParam;
 import com.alibaba.buc.api.datapermission.param.NewAuthProfileParam;
+import com.alibaba.buc.api.datapermission.param.PageGrantObjectDatasParam;
+import com.alibaba.buc.api.datapermission.param.PageGrantObjectOperationsParam;
 import com.alibaba.buc.api.datapermission.param.PageUserDataPermissionDatasParam;
+import com.alibaba.buc.api.datapermission.param.PageUserOperationsParam;
 import com.alibaba.buc.api.datapermission.result.CheckDataPermissionResult;
 import com.alibaba.buc.api.datapermission.result.DataResult;
 import com.alibaba.buc.api.datapermission.result.OperationResult;
@@ -57,6 +60,36 @@ public interface DataAccessControlService {
      * @throws BucException
      */
     AclResult<List<DataResult>> findDataDetail(FindDataDetailParam findDataDetailParam) throws BucException;
+    
+    /**
+     * 分页查询用户可以执行的操作
+     * @param pageUserOperationsParam
+     * @param page
+     * @return
+     * @throws BucException
+     */
+    AclResult<AclPageResult<OperationResult>> pageUserOperations(PageUserOperationsParam pageUserOperationsParam,AclPagination page) throws BucException;
+    
+    /**
+     * 查询角色、用户组等授权对象可执行的操作
+     * @param pageGrantObjectOperationsParam
+     * @param page
+     * @return
+     * @throws BucException
+     */
+    AclResult<AclPageResult<OperationResult>> pageGrantObjectOperations(PageGrantObjectOperationsParam pageGrantObjectOperationsParam,AclPagination page) throws BucException;
+    
+    /**
+     * 分页查询角色、用户组等授权对象拥有的数据
+     * 
+     * 返回结果是每次授权code列表，数据详情需要调用findDataDetail获取
+     * 
+     * @param pageGrantObjectDatasParam
+     * @param page
+     * @return
+     * @throws BucException
+     */
+    AclResult<AclPageResult<String>> pageGrantObjectDatas(PageGrantObjectDatasParam pageGrantObjectDatasParam,AclPagination page) throws BucException;
     
     /**
      * pageUserDataPermissionDatas的http调用，hsf请勿调用
