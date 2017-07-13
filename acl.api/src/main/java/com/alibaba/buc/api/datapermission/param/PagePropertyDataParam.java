@@ -1,5 +1,8 @@
 package com.alibaba.buc.api.datapermission.param;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -28,6 +31,13 @@ public class PagePropertyDataParam extends BasicOutDataSourceQueryParam{
      */
     private String searchKey;
     
+    /**
+     * 发起调用时用户在其他属性选择的值，用于制作级联菜单等场景
+     * 
+     * key是其他属性name，value是当前选择的值列表
+     */
+    private Map<String, List<String>> currentOtherPropertyValues;
+    
     
     public String getParentValue() {
         return parentValue;
@@ -44,6 +54,16 @@ public class PagePropertyDataParam extends BasicOutDataSourceQueryParam{
     
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
+    }
+    
+    
+    public Map<String, List<String>> getCurrentOtherPropertyValues() {
+        return currentOtherPropertyValues;
+    }
+
+    
+    public void setCurrentOtherPropertyValues(Map<String, List<String>> currentOtherPropertyValues) {
+        this.currentOtherPropertyValues = currentOtherPropertyValues;
     }
 
     @Override

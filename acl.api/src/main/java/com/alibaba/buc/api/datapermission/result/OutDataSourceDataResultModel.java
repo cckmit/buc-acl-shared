@@ -39,6 +39,11 @@ public class OutDataSourceDataResultModel implements Serializable {
     private String description;
     
     /**
+     * 指示数据节点在页面上能否被用户选中，当有些节点不希望被当前用户选择时可以设置为false，默认为true，即可以选
+     */
+    private Boolean canSelect;
+    
+    /**
      *  树形结果中，如果当前节点包含下级节点，则返回true，否则返回false 
      */
     private Boolean hasChildren;
@@ -102,14 +107,10 @@ public class OutDataSourceDataResultModel implements Serializable {
         this.otherPropertys = otherPropertys;
     }
 
-
-    
     public String getDescription() {
         return description;
     }
 
-
-    
     public void setDescription(String description) {
         this.description = description;
     }
@@ -124,11 +125,18 @@ public class OutDataSourceDataResultModel implements Serializable {
         this.hasChildren = hasChildren;
     }
     
+    public Boolean getCanSelect() {
+        return canSelect;
+    }
+    
+    public void setCanSelect(Boolean canSelect) {
+        this.canSelect = canSelect;
+    }
+
     @Override
     public int hashCode() {
         return  HashCodeBuilder.reflectionHashCode(this);
     }
-
    
     @Override
     public boolean equals(Object obj) {
