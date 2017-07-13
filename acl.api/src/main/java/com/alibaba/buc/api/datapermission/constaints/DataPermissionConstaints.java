@@ -158,6 +158,11 @@ public class DataPermissionConstaints {
     public static final String OUT_DATA_SOURCE_RESULT_VALUE = "value";
     
     /**
+     * 外部数据源返回结果中的canSelect字段名
+     */
+    public static final String OUT_DATA_SOURCE_RESULT_CAN_SELECT= "canSelect";
+    
+    /**
      * 外部数据源返回结果中的description字段名
      */
     public static final String OUT_DATA_SOURCE_RESULT_DESCRIPTION = "description";

@@ -29,7 +29,7 @@ public class OutDataSourceDataResultModel implements Serializable {
     private String name;
     
     /**
-     * 数据的值，用户被授权、申请后实际得到的值 
+     * 数据的值，用户被授权、申请后实际得到的值，每个数据的值应该保证唯一！
      */
     private String value;
     
