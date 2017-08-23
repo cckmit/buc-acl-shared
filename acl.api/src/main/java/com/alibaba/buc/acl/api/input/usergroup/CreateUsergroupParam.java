@@ -76,6 +76,11 @@ public class CreateUsergroupParam extends AclParam {
     private Boolean isElementIdleRemove = false;
 
     /**
+     * 当组权限闲置时自动冻结
+     */
+    private Boolean isElementIdleFreeze = false;
+
+    /**
      * 当组成员闲置时通知管理员
      */
     private Boolean isMemberIdleNotify = false;
@@ -128,25 +133,25 @@ public class CreateUsergroupParam extends AclParam {
     /**
      * 如果是type = 3 或者 2 必填, 当用户与用户组不匹配时通知
      */
-    private Boolean isMisMatchNotify= false;
+    private Boolean isMismatchNotify= false;
 
     /**
      * 如果是type = 3 或者 2 必填, 当用户与用户组不匹配时自动移出
      */
-    private Boolean isMisMatchRemoveUser = false;
+    private Boolean isMismatchRemoveUser = false;
 
     /**
-     * 如果是type = 2 必填, 当用户符合岗位时通知
+     * 如果是type = 2, 3 必填, 当用户符合岗位时通知
      */
     private Boolean isNewNotify = false;
 
     /**
-     * 如果是type = 2 必填, 当用户符合岗位时自动加入
+     * 如果是type = 2, 3 必填, 当用户符合岗位时自动加入
      */
     private Boolean isNewJoin = false;
 
     /**
-     * 如果是type = 2 必填, 用户组关联岗位
+     * 如果是type = 2 必填, type = 3 非必填 用户组关联岗位
      */
     private List<Integer> relateOrgIds;
 
@@ -326,20 +331,20 @@ public class CreateUsergroupParam extends AclParam {
         this.jobIds = jobIds;
     }
 
-    public Boolean getIsMisMatchNotify() {
-        return isMisMatchNotify;
+    public Boolean getIsMismatchNotify() {
+        return isMismatchNotify;
     }
 
-    public void setIsMisMatchNotify(Boolean isMisMatchNotify) {
-        this.isMisMatchNotify = isMisMatchNotify;
+    public void setIsMismatchNotify(Boolean isMismatchNotify) {
+        this.isMismatchNotify = isMismatchNotify;
     }
 
-    public Boolean getIsMisMatchRemoveUser() {
-        return isMisMatchRemoveUser;
+    public Boolean getIsMismatchRemoveUser() {
+        return isMismatchRemoveUser;
     }
 
-    public void setIsMisMatchRemoveUser(Boolean isMisMatchRemoveUser) {
-        this.isMisMatchRemoveUser = isMisMatchRemoveUser;
+    public void setIsMismatchRemoveUser(Boolean isMismatchRemoveUser) {
+        this.isMismatchRemoveUser = isMismatchRemoveUser;
     }
 
     public Boolean getIsNewNotify() {
@@ -366,4 +371,11 @@ public class CreateUsergroupParam extends AclParam {
         this.relateOrgIds = relateOrgIds;
     }
 
+    public Boolean getIsElementIdleFreeze() {
+        return isElementIdleFreeze;
+    }
+
+    public void setIsElementIdleFreeze(Boolean isElementIdleFreeze) {
+        this.isElementIdleFreeze = isElementIdleFreeze;
+    }
 }
