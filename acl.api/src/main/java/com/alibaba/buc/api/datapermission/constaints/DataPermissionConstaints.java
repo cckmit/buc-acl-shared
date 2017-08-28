@@ -113,6 +113,21 @@ public class DataPermissionConstaints {
     public static final String OUT_DATA_SOURCE_PARAM_PAGE_SIZE="pageSize";
     
     /**
+     * 外部数据源代表当前操作场景的参数
+     */
+    public static final String OUT_DATA_SOURCE_PARAM_SCENE = "scene";
+    
+    /**
+     * 外部数据源部门管理员操作的场景
+     */
+    public static final String OUT_DATA_SOURCE_PARAM_SCENE_ORG_ADMIN = "ORG_ADMIN";
+    
+    /**
+     * 外部数据源部门管理员操作时代表当前部门的dep_id参数，主要为生态化服务，多个dep_id用逗号“,”分隔
+     */
+    public static final String OUT_DATA_SOURCE_PARAM_SCENE_CORP_LIST = "corpNo";
+    
+    /**
      * 外部数据源返回结果中的hasError字段名
      */
     public static final String OUT_DATA_SOURCE_RESULT_HAS_ERROR = "hasError";
@@ -217,7 +232,6 @@ public class DataPermissionConstaints {
      * 外部数据源返回结果中的approverMap字段名
      */
     public static final String OUT_DATA_SOURCE_RESULT_APPROVER_MAP  = "approverMap";
-    
     
     /**
      * 外部数据源使用的当前请求类型，

@@ -20,6 +20,8 @@ public interface GrantService {
 
     /**
      * 数据权限授权
+     * 
+     * 异步操作，生效有延时，预计10分钟内
      *
      * @param grantDataPermissionParam
      * @return

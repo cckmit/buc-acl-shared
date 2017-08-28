@@ -6,10 +6,10 @@
     <parent>
         <artifactId>acl.shared.parent</artifactId>
         <groupId>com.alibaba.platform.shared</groupId>
-        <version>1.2.51</version>
+        <version>1.2.52-tx-SNAPSHOT</version>
     </parent>
     <artifactId>acl.plugin</artifactId>
-    <version>1.2.51</version>
+    <version>1.2.52-tx-SNAPSHOT</version>
     <properties>
         <!-- 生成插件sdk sources的临时目录 -->
         <generatedSourceDir>${project.build.directory}/plugin-sdk-src</generatedSourceDir>
