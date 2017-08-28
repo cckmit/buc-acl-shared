@@ -33,6 +33,18 @@ public class BasicOutDataSourceQueryParam implements Serializable{
     private String actionType;
     
     /**
+     * 当前操作场景，为需要区分用户操作场景的应用使用，可以引用
+     * DataPermissionConstaints.OUT_DATA_SOURCE_PARAM_SCENE_XXX常量
+     */
+    private String scene; 
+    
+    /**
+     * 部门管理员操作场景中代表当前管理部门的dep_id列表
+     * 逗号“,”分隔
+     */
+    private String corpNo;
+    
+    /**
      * 安全签名
      */
     private String sign;
@@ -78,6 +90,29 @@ public class BasicOutDataSourceQueryParam implements Serializable{
     
     public void setActionType(String actionType) {
         this.actionType = actionType;
+    }
+    
+    
+    public String getScene() {
+        return scene;
+    }
+
+
+    
+    public void setScene(String scene) {
+        this.scene = scene;
+    }
+
+
+    
+    public String getCorpNo() {
+        return corpNo;
+    }
+
+
+    
+    public void setCorpNo(String corpNo) {
+        this.corpNo = corpNo;
     }
 
 
