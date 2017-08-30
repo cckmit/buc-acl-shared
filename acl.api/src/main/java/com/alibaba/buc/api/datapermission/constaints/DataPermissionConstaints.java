@@ -125,7 +125,7 @@ public class DataPermissionConstaints {
     /**
      * 外部数据源部门管理员操作时代表当前部门的dep_id参数，主要为生态化服务，多个dep_id用逗号“,”分隔
      */
-    public static final String OUT_DATA_SOURCE_PARAM_SCENE_CORP_LIST = "corpNo";
+    public static final String OUT_DATA_SOURCE_PARAM_SCENE_CORP_LIST = "corpList";
     
     /**
      * 外部数据源返回结果中的hasError字段名

@@ -42,7 +42,7 @@ public class BasicOutDataSourceQueryParam implements Serializable{
      * 部门管理员操作场景中代表当前管理部门的dep_id列表
      * 逗号“,”分隔
      */
-    private String corpNo;
+    private String corpList;
     
     /**
      * 安全签名
@@ -97,22 +97,21 @@ public class BasicOutDataSourceQueryParam implements Serializable{
         return scene;
     }
 
-
     
     public void setScene(String scene) {
         this.scene = scene;
     }
-
+    
 
     
-    public String getCorpNo() {
-        return corpNo;
+    public String getCorpList() {
+        return corpList;
     }
 
 
     
-    public void setCorpNo(String corpNo) {
-        this.corpNo = corpNo;
+    public void setCorpList(String corpList) {
+        this.corpList = corpList;
     }
 
 
