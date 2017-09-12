@@ -24,11 +24,6 @@ public class ChangePermissionParam extends AclParam {
     private String dataPermissionName;
 
     /**
-     * 授权指定的操作、属性组合所属数据权限模型name，以便判断授权数据是否规范
-     */
-    private String dataPermissionModelName;
-
-    /**
      * 用户id
      */
     private Integer userId;
@@ -63,17 +58,6 @@ public class ChangePermissionParam extends AclParam {
         this.dataPermissionName = dataPermissionName;
     }
 
-    
-    public String getDataPermissionModelName() {
-        return dataPermissionModelName;
-    }
-
-    
-    public void setDataPermissionModelName(String dataPermissionModelName) {
-        this.dataPermissionModelName = dataPermissionModelName;
-    }
-
-    
     public Integer getUserId() {
         return userId;
     }
