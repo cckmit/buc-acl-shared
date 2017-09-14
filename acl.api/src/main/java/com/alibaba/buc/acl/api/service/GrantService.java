@@ -5,6 +5,7 @@ import com.alibaba.buc.acl.api.input.grant.GrantPermissionsToUserParam;
 import com.alibaba.buc.acl.api.input.grant.GrantPermissionsToUsergroupParam;
 import com.alibaba.buc.acl.api.input.grant.GrantRolesToUserParam;
 import com.alibaba.buc.acl.api.input.grant.GrantRolesToUsergroupParam;
+import com.alibaba.buc.api.grant.ChangePermissionParam;
 import com.alibaba.buc.api.grant.CleanDataPermissionParam;
 import com.alibaba.buc.api.grant.GrantDataPermissionParam;
 
@@ -35,5 +36,13 @@ public interface GrantService {
      * @return
      */
     AclResult<String> cleanDataPermission(CleanDataPermissionParam param);
+    
+    /**
+     * 变更权限，主要是变更用户角色、数据权限
+     * 调用后会覆盖现有授权，将授权替换成入参指定的授权
+     * @param param
+     * @return
+     */
+    AclResult<String> changePermission(ChangePermissionParam param);
 
 }
