@@ -51,6 +51,6 @@ public interface RoleReadService {
      * @param pageRolesByAppAccessKeyParam
      * @return
      */
-    AclResult<AclPageResult<PageRolesByAppAccessKeyResult>> pageRolesByAppAccessKey(PageRolesByAppAccessKeyParam pageRolesByAppAccessKeyParam);
+    AclResult<AclPageResult<PageRolesByAppAccessKeyResult>> pageRolesByAppAccessKey(PageRolesByAppAccessKeyParam pageRolesByAppAccessKeyParam,AclPagination page);
     
 }
