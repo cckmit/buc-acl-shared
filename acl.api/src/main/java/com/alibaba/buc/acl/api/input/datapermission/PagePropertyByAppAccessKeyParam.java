@@ -1,13 +1,13 @@
 package com.alibaba.buc.acl.api.input.datapermission;
 
-import com.alibaba.buc.acl.api.common.NormalAclParam;
+import com.alibaba.buc.acl.api.common.AclParam;
 
 /**
  * 封装属性查询参数
  * 
  * @author tongxu 2016年11月4日 下午1:47:23
  */
-public class PagePropertyByAppAccessKeyParam extends NormalAclParam {
+public class PagePropertyByAppAccessKeyParam extends AclParam {
 
     /**
      * 序列化版本号
