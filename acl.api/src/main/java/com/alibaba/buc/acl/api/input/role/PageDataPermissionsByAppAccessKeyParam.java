@@ -20,12 +20,12 @@ public class PageDataPermissionsByAppAccessKeyParam extends AclParam {
     private String title;
     
     /**
-     * 数据权限code
+     * 数据权限code，支持全模糊查询
      */
     private String name;
     
     /**
-     * 关联的角色名
+     * 关联的角色code
      */
     private String roleName;
     

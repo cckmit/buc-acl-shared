@@ -20,7 +20,7 @@ public class PagePropertyByAppAccessKeyParam extends NormalAclParam {
     private String title;
     
     /**
-     * 属性code
+     * 属性code，支持全模糊查询
      */
     private String name;
     

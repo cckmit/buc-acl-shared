@@ -20,7 +20,7 @@ public class PageRolesByAppAccessKeyParam extends AclParam{
 	private String title;
 	
 	/**
-	 * 角色code
+	 * 角色code，支持全模糊查询
 	 */
 	private String name;
 	
