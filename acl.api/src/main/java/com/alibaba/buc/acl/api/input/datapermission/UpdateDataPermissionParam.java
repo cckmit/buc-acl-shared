@@ -5,28 +5,26 @@ import java.util.List;
 import com.alibaba.buc.acl.api.common.AclParam;
 
 /**
- * 封装数据权限模型创建参数
+ * 封装数据权限模型更新相关信息
  *
- * @author tongxu 2016年9月1日 下午2:11:12
+ * @author tongxu 2016年9月1日 下午2:12:33
  */
-@Deprecated
-public class CreateDataPermissionModelParam extends AclParam {
-
+public class UpdateDataPermissionParam extends AclParam {
 
     /**
      * 序列化版本号
      */
-    private static final long serialVersionUID = 5047167644539015019L;
+    private static final long serialVersionUID = 8996278238015120614L;
+    
+    /**
+     * 英文名，定位要修改的数据权限模型的唯一标示符
+     */
+    private String name;
 
     /**
      * 中文名
      */
     private String title;
-    
-    /**
-     * 英文名
-     */
-    private String name;
     
     /**
      * 描述
@@ -79,16 +77,6 @@ public class CreateDataPermissionModelParam extends AclParam {
     private List<String> operationNameList;
 
     
-    public String getTitle() {
-        return title;
-    }
-
-    
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    
     public String getName() {
         return name;
     }
@@ -96,6 +84,16 @@ public class CreateDataPermissionModelParam extends AclParam {
     
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+    public String getTitle() {
+        return title;
+    }
+
+    
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     

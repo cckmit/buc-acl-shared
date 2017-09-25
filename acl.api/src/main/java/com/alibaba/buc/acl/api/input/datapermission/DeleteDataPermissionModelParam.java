@@ -7,6 +7,7 @@ import com.alibaba.buc.acl.api.common.AclParam;
  *
  * @author tongxu 2016年9月1日 下午2:13:32
  */
+@Deprecated
 public class DeleteDataPermissionModelParam extends AclParam {
 
 	private static final long serialVersionUID = 4135372589910768550L;

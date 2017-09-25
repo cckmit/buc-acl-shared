@@ -2,6 +2,10 @@ package com.alibaba.buc.acl.api.service;
 
 import com.alibaba.buc.acl.api.common.AclResult;
 import com.alibaba.buc.acl.api.input.datapermission.IsPropertyEnumValueExistParam;
+import com.alibaba.buc.acl.api.input.datapermission.PagePropertyByAppAccessKeyParam;
+import com.alibaba.buc.api.common.AclPageResult;
+import com.alibaba.buc.api.common.AclPagination;
+import com.alibaba.buc.api.datapermission.result.PropertyResult;
 
 /**
  * 封装属性读服务
@@ -19,5 +23,13 @@ public interface PropertyReadService {
      * @return
      */
     AclResult<Boolean> isPropertyEnumValueExist(IsPropertyEnumValueExistParam param);
+    
+    /**
+     * 分页查询应用下数据权限，可查询共享数据权限
+     * @param pagePropertyByAppAccessKeyParam
+     * @return
+     */
+    AclResult<AclPageResult<PropertyResult>> pagePropertyByAppAccessKey(PagePropertyByAppAccessKeyParam pagePropertyByAppAccessKeyParam,AclPagination page);
+    
     
 }

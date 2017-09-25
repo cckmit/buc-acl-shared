@@ -3,20 +3,15 @@ package com.alibaba.buc.acl.api.input.datapermission;
 import com.alibaba.buc.acl.api.common.AclParam;
 
 /**
- * 封装数据模型查询相关参数
+ * 封装数据权限模型删除相关信息
  *
  * @author tongxu 2016年9月1日 下午2:13:32
  */
-public class GetDataModelParam extends AclParam {
+public class DeleteDataPermissionParam extends AclParam {
 
-    /**
-     * 序列化版本号
-     */
-    private static final long serialVersionUID = -6815790953200523118L;
+	private static final long serialVersionUID = 4135372589910768550L;
     
-    /**
-     * 数据模型name
-     */
+    // 要删除的数据权限模型name
     private String            name;
     
   

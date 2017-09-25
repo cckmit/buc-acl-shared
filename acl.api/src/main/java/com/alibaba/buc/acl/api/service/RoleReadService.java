@@ -5,8 +5,10 @@ import com.alibaba.buc.acl.api.input.role.CheckUserRolesParam;
 import com.alibaba.buc.acl.api.input.role.FindRolesByAppNameParam;
 import com.alibaba.buc.acl.api.input.role.GetRoleParam;
 import com.alibaba.buc.acl.api.input.role.PageRoleDataPermissionModelParam;
+import com.alibaba.buc.acl.api.input.role.PageRolesByAppAccessKeyParam;
 import com.alibaba.buc.acl.api.output.role.CheckUserRolesResult;
 import com.alibaba.buc.acl.api.output.role.FindRolesByAppNameResult;
+import com.alibaba.buc.acl.api.output.role.PageRolesByAppAccessKeyResult;
 import com.alibaba.buc.acl.api.output.role.RoleResult;
 import com.alibaba.buc.api.common.AclPageResult;
 import com.alibaba.buc.api.common.AclPagination;
@@ -44,5 +46,11 @@ public interface RoleReadService {
      */
     FindRolesByAppNameResult  findRolesByAppName(FindRolesByAppNameParam param);
     
+    /**
+     * 分页查询应用下角色，包含共享给应用的角色也能查出来
+     * @param pageRolesByAppAccessKeyParam
+     * @return
+     */
+    AclResult<AclPageResult<PageRolesByAppAccessKeyResult>> pageRolesByAppAccessKey(PageRolesByAppAccessKeyParam pageRolesByAppAccessKeyParam);
     
 }
