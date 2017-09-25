@@ -29,12 +29,6 @@ public class PageDataPermissionsByAppAccessKeyParam extends AclParam {
      */
     private String roleName;
     
-    /**
-     * 为true时返回结果包含其他应用共享给此应用的数据权限，false或者为空代表不包含
-     */
-    private Boolean includeSharedDataPermission;
-
-    
     public String getTitle() {
         return title;
     }
@@ -53,19 +47,6 @@ public class PageDataPermissionsByAppAccessKeyParam extends AclParam {
     public void setName(String name) {
         this.name = name;
     }
-
-    
-    
-    public Boolean getIncludeSharedDataPermission() {
-        return includeSharedDataPermission;
-    }
-
-
-    
-    public void setIncludeSharedDataPermission(Boolean includeSharedDataPermission) {
-        this.includeSharedDataPermission = includeSharedDataPermission;
-    }
-
 
     public String getRoleName() {
         return roleName;
