@@ -8,6 +8,7 @@ import com.alibaba.buc.acl.api.common.AclParam;
  *
  * @author tongxu 2016年4月28日 下午4:07:20
  */
+@Deprecated
 public class PageDataPermissionModelPropertyParam extends AclParam {
 
     private static final long serialVersionUID = 8544782005254653337L;

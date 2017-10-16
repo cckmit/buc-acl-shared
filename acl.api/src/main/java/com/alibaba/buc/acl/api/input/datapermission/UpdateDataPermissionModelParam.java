@@ -9,6 +9,7 @@ import com.alibaba.buc.acl.api.common.AclParam;
  *
  * @author tongxu 2016年9月1日 下午2:12:33
  */
+@Deprecated
 public class UpdateDataPermissionModelParam extends AclParam {
 
     /**

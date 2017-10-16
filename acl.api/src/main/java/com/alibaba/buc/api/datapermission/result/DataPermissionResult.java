@@ -10,8 +10,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  * 类DataPermissionModelResult.java的实现描述：TODO 类实现描述 
  * @author tongxu 2016年4月25日 上午11:00:50
  */
-@Deprecated
-public class DataPermissionModelResult implements Serializable {
+public class DataPermissionResult implements Serializable {
 
 
     /**
