@@ -8,7 +8,6 @@ import com.alibaba.buc.acl.api.output.usergroup.UsergroupResult;
 import com.alibaba.buc.acl.api.output.usergroup.UsergroupUsersResult;
 import com.alibaba.buc.api.common.AclPageResult;
 import com.alibaba.buc.api.common.AclPagination;
-import com.alibaba.buc.api.datapermission.result.DataPermissionModelResult;
 
 /**
  * Usergroup Read Service

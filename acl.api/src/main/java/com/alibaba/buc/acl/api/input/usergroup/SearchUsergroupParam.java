@@ -9,7 +9,7 @@ import com.alibaba.buc.acl.api.common.AclParam;
  */
 public class SearchUsergroupParam extends AclParam {
 
-    private static final long serialVersionUID = 8046964398724668303L;
+    private static final long serialVersionUID = -8683183133440337774L;
 
     private String keyword;
 
