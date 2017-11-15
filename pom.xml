@@ -9,7 +9,7 @@
   </parent>  
   <groupId>com.alibaba.platform.shared</groupId>  
   <artifactId>acl.shared.parent</artifactId>  
-  <version>1.2.55</version>
+  <version>1.2.56</version>
   <!-- 请注意，开发版本 SNAPSHOT 需要大写 -->
   <packaging>pom</packaging>
   <name>ACL Shared Parent Project</name>  
@@ -19,7 +19,7 @@
   </modules>  
   <properties> 
     <buc.legacy.version>0.0.1</buc.legacy.version>  
-    <commons-lang.version>2.4</commons-lang.version>
+    <commons-lang.version>2.6</commons-lang.version>
   </properties>  
   <dependencyManagement> 
     <dependencies> 
